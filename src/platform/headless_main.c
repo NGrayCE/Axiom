@@ -63,49 +63,45 @@ static void run_arena_tests(void) {
 // Suite 3: Platform & Engine Boundary (The Fake OS)
 // -----------------------------------------------------------------------------
 
-// Fake OS Function: A dummy clock that ticks forward slightly every time it's called
+// Fake OS Function: A dummy clock
 static uint64_t fake_system_clock = 1000000;
 static uint64_t fake_os_get_ticks_us(void) {
-    fake_system_clock += 16666; // Simulate ~16.6ms passing
+    fake_system_clock += 16666; 
     return fake_system_clock;
 }
 
-// Fake OS Function: Route engine logs directly to desktop standard output
+// Fake OS Function: Log routing
 static void fake_os_log(const char* message) {
     printf("   > OS_CONSOLE: %s\n", message);
 }
 
-// Fake OS Function: Asset reading (stubbed out for now)
+// Fake OS Function: Asset reading (stubbed)
 static ax_result_t fake_os_read_asset(const char* filename, void** out_buffer, size_t* out_size) {
-    (void)filename; (void)out_buffer; (void)out_size; // Suppress unused warnings
+    (void)filename; (void)out_buffer; (void)out_size; 
     return AX_ERR_INVALID_INPUT; 
 }
+
+
+static uint8_t fake_os_main_ram[1024 * 1024];     // 1MB
+static uint8_t fake_os_frame_ram[256 * 1024];     // 256KB
 
 static void run_engine_boot_tests(void) {
     printf("\n--- Running Engine Boundary Tests ---\n");
 
-    // 1. Setup the Fake OS API Contract
     ax_system_api_t fake_api = {
         .get_ticks_us = fake_os_get_ticks_us,
         .log_message = fake_os_log,
         .read_asset = fake_os_read_asset
     };
 
-    // 2. Allocate the System RAM (Simulating what Android/iOS would do)
-    // We allocate 1MB for permanent storage, and 256KB for the frame scratchpad.
-    void* main_ram = malloc(1024 * 1024);     
-    void* frame_ram = malloc(256 * 1024);     
-    
-    AX_TEST("Fake OS: RAM Allocated", main_ram != NULL && frame_ram != NULL);
-
-    // 3. Test the Boot Sequence
-    ax_result_t boot_res = ax_engine_boot(&fake_api, main_ram, 1024 * 1024, frame_ram, 256 * 1024);
+    // Boot the engine using the static RAM
+    ax_result_t boot_res = ax_engine_boot(&fake_api, 
+                                          fake_os_main_ram, sizeof(fake_os_main_ram), 
+                                          fake_os_frame_ram, sizeof(fake_os_frame_ram));
+                                          
     AX_TEST("Engine Boot: AX_OK", boot_res == AX_OK);
-
-    // Clean up our Fake OS memory
-    free(main_ram);
-    free(frame_ram);
 }
+
 
 // -----------------------------------------------------------------------------
 // Suite 4: Input Queue & Deterministic Tick
@@ -143,6 +139,59 @@ static void run_input_tick_tests(void) {
 }
 
 // -----------------------------------------------------------------------------
+// Suite 5: The Determinism Crucible (600 Frame Simulation)
+// -----------------------------------------------------------------------------
+static void run_determinism_test(void) {
+    printf("\n--- Running 10-Second Determinism Crucible ---\n");
+
+    // --- THE FIX: Cleanly reboot the engine to clear Suite 4's inputs ---
+    ax_engine_teardown();
+    
+    ax_system_api_t fake_api = {
+        .get_ticks_us = fake_os_get_ticks_us,
+        .log_message = fake_os_log,
+        .read_asset = fake_os_read_asset
+    };
+    
+    ax_engine_boot(&fake_api, 
+                   fake_os_main_ram, sizeof(fake_os_main_ram), 
+                   fake_os_frame_ram, sizeof(fake_os_frame_ram));
+    // --------------------------------------------------------------------
+
+    ax_input_queue_t empty_queue = { .count = 0 };
+
+    printf("   [Action] Simulating 600 frames (10 seconds at 60Hz)...\n");
+    
+    for (uint32_t i = 0; i < 600; i++) {
+        ax_result_t res = ax_engine_tick(&empty_queue);
+        if (res != AX_OK) {
+            printf("[FAIL] Engine tick failed at frame %d\n", i);
+            failed_tests++;
+            return;
+        }
+    }
+
+    // Retrieve the final state using the compliant API
+    const ax_game_state_t* final_state = NULL;
+    ax_result_t state_res = ax_engine_get_state(&final_state);
+    
+    AX_TEST("Determinism: State retrieved successfully", state_res == AX_OK && final_state != NULL);
+    AX_TEST("Determinism: Frame count is exactly 600", final_state->frame_count == 600);
+
+    // Convert fixed-point back to floats purely for readable console printing
+    float final_x = AX_FIXED_TO_FLOAT(final_state->position.x);
+    float final_y = AX_FIXED_TO_FLOAT(final_state->position.y);
+    
+    printf("   [Result] Final Position: X = %.3f, Y = %.3f\n", final_x, final_y);
+
+    ax_fixed_t expected_x = 3276800; // 50.0 in fixed-point
+    ax_fixed_t expected_y = 0;       // 0.0 in fixed-point
+
+    AX_TEST("Determinism: X coordinate matches Golden Master", final_state->position.x == expected_x);
+    AX_TEST("Determinism: Y coordinate matches Golden Master", final_state->position.y == expected_y);
+}
+
+// -----------------------------------------------------------------------------
 // Main Execution
 // -----------------------------------------------------------------------------
 int main(void) {
@@ -154,10 +203,11 @@ int main(void) {
     run_arena_tests();
     run_engine_boot_tests();
 	run_input_tick_tests();
+	run_determinism_test();
 	
     printf("\n========================================\n");
     if (failed_tests == 0) {
-        printf(" SUCCESS: All %d test suites passed!\n", 4); // Update count if adding suites
+        printf(" SUCCESS: All %d test suites passed!\n", 5); // Update count if adding suites
         return EXIT_SUCCESS;
     } else {
         printf(" FAILURE: %d individual checks failed.\n", failed_tests);

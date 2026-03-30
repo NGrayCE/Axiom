@@ -9,6 +9,24 @@
  * @brief The strict boundary between the deterministic engine and the host OS.
  * @{
  */
+ 
+ /**
+ * @brief The read-only state of the game simulation.
+ */
+typedef struct {
+    ax_vec2_t position;
+    ax_vec2_t velocity;
+    ax_vec2_t bounds;
+    uint32_t frame_count;
+} ax_game_state_t;
+
+/**
+ * @brief Retrieves a read-only pointer to the current game state.
+ * @param out_state Pointer to where the read-only state address will be written.
+ * @return AX_OK on success, or AX_ERR_INVALID_INPUT if the engine is not booted or the pointer is NULL.
+ */
+ax_result_t ax_engine_get_state(const ax_game_state_t** out_state);
+
 /**
  * @brief Categorizes the type of hardware input event.
  */
@@ -79,6 +97,13 @@ typedef struct {
 ax_result_t ax_engine_boot(const ax_system_api_t* api, 
                            void* main_memory, size_t main_size,
                            void* frame_memory, size_t frame_size);
+						   
+/**
+ * @brief Shuts down the engine and resets its initialized state.
+ * @details Useful for clean reboots during testing or OS application lifecycle events.
+ * @return AX_OK on successful teardown.
+ */
+ax_result_t ax_engine_teardown(void);
 
 /**
  * @brief Advances the engine simulation by one deterministic tick.
