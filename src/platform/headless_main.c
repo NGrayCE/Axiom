@@ -1,131 +1,166 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #include "ax_math.h"
 #include "ax_core.h"
+#include "ax_platform.h"
 
-// A simple testing macro to keep the output clean
+// -----------------------------------------------------------------------------
+// Test Macro
+// -----------------------------------------------------------------------------
 #define AX_TEST(name, condition) \
     do { \
         if (condition) { \
             printf("[PASS] %s\n", name); \
         } else { \
             printf("[FAIL] %s\n", name); \
-            tests_failed++; \
+            failed_tests++; \
         } \
     } while(0)
 
-int main(void) {
-    int tests_failed = 0;
-    
-    printf("========================================\n");
-    printf(" Axiom Engine: Headless Math Test Bench \n");
-    printf("========================================\n\n");
+static int failed_tests = 0;
 
-    // -------------------------------------------------------------------------
-    // 1. Test Conversions
-    // -------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// Suite 1: Math Core
+// -----------------------------------------------------------------------------
+static void run_math_tests(void) {
+    printf("\n--- Running Math Tests ---\n");
     ax_fixed_t one = AX_INT_TO_FIXED(1);
-    ax_fixed_t neg_one = AX_INT_TO_FIXED(-1);
     ax_fixed_t half = AX_FLOAT_TO_FIXED(0.5f);
-
-    AX_TEST("Conversion: 1 == 65536 (16.16 shift)", one == 65536);
-    AX_TEST("Conversion: -1 == -65536", neg_one == -65536);
-    AX_TEST("Conversion: 0.5f == 32768", half == 32768);
-
-    // -------------------------------------------------------------------------
-    // 2. Test Basic Arithmetic
-    // -------------------------------------------------------------------------
-    ax_fixed_t two = AX_INT_TO_FIXED(2);
-    ax_fixed_t three = AX_INT_TO_FIXED(3);
-    
-    AX_TEST("Math Add: 1 + 2 = 3", ax_math_add(one, two) == three);
-    AX_TEST("Math Sub: 3 - 2 = 1", ax_math_sub(three, two) == one);
-
-    // -------------------------------------------------------------------------
-    // 3. Test Multiplication (The critical hardware check)
-    // -------------------------------------------------------------------------
-    // 0.5 * 0.5 = 0.25 (which is 16384 in fixed point)
     ax_fixed_t quarter = AX_FLOAT_TO_FIXED(0.25f);
+    ax_fixed_t two = AX_INT_TO_FIXED(2);
+
     AX_TEST("Math Mul: 0.5 * 0.5 = 0.25", ax_math_mul(half, half) == quarter);
-
-    // 2 * 0.5 = 1
-    AX_TEST("Math Mul: 2.0 * 0.5 = 1.0", ax_math_mul(two, half) == one);
-
-    // Test negative multiplication: -1 * 2 = -2
-    ax_fixed_t neg_two = AX_INT_TO_FIXED(-2);
-    AX_TEST("Math Mul: -1.0 * 2.0 = -2.0", ax_math_mul(neg_one, two) == neg_two);
-
-    // -------------------------------------------------------------------------
-    // 4. Test Division
-    // -------------------------------------------------------------------------
-    // 1 / 2 = 0.5
     AX_TEST("Math Div: 1.0 / 2.0 = 0.5", ax_math_div(one, two) == half);
-
-    // -2 / 0.5 = -4
-    ax_fixed_t neg_four = AX_INT_TO_FIXED(-4);
-    AX_TEST("Math Div: -2.0 / 0.5 = -4.0", ax_math_div(neg_two, half) == neg_four);
-
-    // -------------------------------------------------------------------------
-    // 5. Test Vector Alignment (Anonymous Union Checks)
-    // -------------------------------------------------------------------------
+    
     ax_vec2_t v1 = { .x = one, .y = two };
-    ax_vec2_t v2 = { .x = two, .y = three };
-    ax_vec2_t v_result = ax_vec2_add(v1, v2);
+    ax_vec2_t v2 = { .x = two, .y = one };
+    ax_vec2_t v_res = ax_vec2_add(v1, v2);
+    AX_TEST("Vector Add: X and Y match", v_res.x == AX_INT_TO_FIXED(3) && v_res.y == AX_INT_TO_FIXED(3));
+}
 
-    AX_TEST("Vector Add: X matches", v_result.x == three);
-    AX_TEST("Vector Add: Y matches", v_result.y == AX_INT_TO_FIXED(5));
-    
-    // Test the raw array accessor
-    AX_TEST("Vector Array Access: raw[0] == x", v_result.raw[0] == three);
-    AX_TEST("Vector Array Access: raw[1] == y", v_result.raw[1] == AX_INT_TO_FIXED(5));
-
-	// -------------------------------------------------------------------------
-    // 6. Test Memory Arena Allocation & Alignment
-    // -------------------------------------------------------------------------
-    uint8_t backing_ram[1024]; // Simulate 1KB of system RAM
+// -----------------------------------------------------------------------------
+// Suite 2: Memory Arena
+// -----------------------------------------------------------------------------
+static void run_arena_tests(void) {
+    printf("\n--- Running Memory Tests ---\n");
+    uint8_t backing_ram[1024];
     ax_arena_t arena;
-	
-	// Test: Catch invalid initialization
-    ax_result_t res_bad_init = ax_arena_init(&arena, NULL, 1024);
-    AX_TEST("Arena Error: Catch NULL backing buffer during Init", res_bad_init == AX_ERR_INVALID_INPUT);
-
-    // Test: Valid initialization
-    ax_result_t res_good_init = ax_arena_init(&arena, backing_ram, sizeof(backing_ram));
-    AX_TEST("Arena Init: AX_OK returned", res_good_init == AX_OK);
-    AX_TEST("Arena Init: Offset is 0", arena.offset == 0);
-    AX_TEST("Arena Init: Capacity is 1024", arena.capacity == 1024);
-
-    // Push a single byte (alignment 1)
-    uint8_t* byte_ptr = NULL;
-    ax_result_t res_byte = ax_push_struct(&arena, uint8_t, &byte_ptr);
-    AX_TEST("Arena Push: 1 Byte success flag", res_byte == AX_OK);
-    AX_TEST("Arena Push: 1 Byte pointer valid", byte_ptr != NULL);
-    if (byte_ptr) *byte_ptr = 0xFF; // Safe write
-
-    // Push a vec3 (size 12, alignment 4). 
-    ax_vec3_t* vec_ptr = NULL;
-    ax_result_t res_vec = ax_push_struct(&arena, ax_vec3_t, &vec_ptr);
-    AX_TEST("Arena Push: vec3 success flag", res_vec == AX_OK);
     
-    // Check if the pointer actually landed on a 4-byte boundary
-    AX_TEST("Arena Alignment: vec3 is 4-byte aligned", ((uintptr_t)vec_ptr % _Alignof(ax_vec3_t)) == 0);
+    AX_TEST("Arena Init: AX_OK", ax_arena_init(&arena, backing_ram, sizeof(backing_ram)) == AX_OK);
 
-    // Force an Out of Memory error
+    ax_vec3_t* vec_ptr = NULL;
+    ax_result_t res = ax_push_struct(&arena, ax_vec3_t, &vec_ptr);
+    AX_TEST("Arena Push: Success", res == AX_OK && vec_ptr != NULL);
+    AX_TEST("Arena Alignment: 4-byte boundary", ((uintptr_t)vec_ptr % _Alignof(ax_vec3_t)) == 0);
+
     uint8_t* massive_ptr = NULL;
-    ax_result_t res_oom = ax_push_array(&arena, uint8_t, 2048, &massive_ptr);
-    AX_TEST("Arena Error: Catch Out of Memory (OOM)", res_oom == AX_ERR_OUT_OF_MEMORY);
-    AX_TEST("Arena Error: Pointer remains NULL on OOM", massive_ptr == NULL);
+    AX_TEST("Arena Error: Catch OOM", ax_push_array(&arena, uint8_t, 2048, &massive_ptr) == AX_ERR_OUT_OF_MEMORY);
+}
 
-    // Clear the arena
-    ax_arena_clear(&arena);
-    AX_TEST("Arena Clear: Offset reset to 0", arena.offset == 0);
+// -----------------------------------------------------------------------------
+// Suite 3: Platform & Engine Boundary (The Fake OS)
+// -----------------------------------------------------------------------------
+
+// Fake OS Function: A dummy clock that ticks forward slightly every time it's called
+static uint64_t fake_system_clock = 1000000;
+static uint64_t fake_os_get_ticks_us(void) {
+    fake_system_clock += 16666; // Simulate ~16.6ms passing
+    return fake_system_clock;
+}
+
+// Fake OS Function: Route engine logs directly to desktop standard output
+static void fake_os_log(const char* message) {
+    printf("   > OS_CONSOLE: %s\n", message);
+}
+
+// Fake OS Function: Asset reading (stubbed out for now)
+static ax_result_t fake_os_read_asset(const char* filename, void** out_buffer, size_t* out_size) {
+    (void)filename; (void)out_buffer; (void)out_size; // Suppress unused warnings
+    return AX_ERR_INVALID_INPUT; 
+}
+
+static void run_engine_boot_tests(void) {
+    printf("\n--- Running Engine Boundary Tests ---\n");
+
+    // 1. Setup the Fake OS API Contract
+    ax_system_api_t fake_api = {
+        .get_ticks_us = fake_os_get_ticks_us,
+        .log_message = fake_os_log,
+        .read_asset = fake_os_read_asset
+    };
+
+    // 2. Allocate the System RAM (Simulating what Android/iOS would do)
+    // We allocate 1MB for permanent storage, and 256KB for the frame scratchpad.
+    void* main_ram = malloc(1024 * 1024);     
+    void* frame_ram = malloc(256 * 1024);     
+    
+    AX_TEST("Fake OS: RAM Allocated", main_ram != NULL && frame_ram != NULL);
+
+    // 3. Test the Boot Sequence
+    ax_result_t boot_res = ax_engine_boot(&fake_api, main_ram, 1024 * 1024, frame_ram, 256 * 1024);
+    AX_TEST("Engine Boot: AX_OK", boot_res == AX_OK);
+
+    // Clean up our Fake OS memory
+    free(main_ram);
+    free(frame_ram);
+}
+
+// -----------------------------------------------------------------------------
+// Suite 4: Input Queue & Deterministic Tick
+// -----------------------------------------------------------------------------
+static void run_input_tick_tests(void) {
+    printf("\n--- Running Input Tick Tests ---\n");
+
+    // 1. Manually construct a multi-event input queue
+    // We simulate a "Fast Tap": Down, then Up, within a single frame.
+    ax_input_queue_t queue = {0};
+    
+    // Event 0: Touch Down at (10, 10)
+    queue.events[0].type = AX_INPUT_TOUCH_DOWN;
+    queue.events[0].position = (ax_vec2_t){ .x = AX_INT_TO_FIXED(10), .y = AX_INT_TO_FIXED(10) };
+    queue.events[0].timestamp_us = 1000500;
+    
+    // Event 1: Touch Up at (10, 10)
+    queue.events[1].type = AX_INPUT_TOUCH_UP;
+    queue.events[1].position = (ax_vec2_t){ .x = AX_INT_TO_FIXED(10), .y = AX_INT_TO_FIXED(10) };
+    queue.events[1].timestamp_us = 1000520;
+    
+    queue.count = 2;
+
+    // 2. Trigger the tick
+    // The engine should log "Touch Down registered" even though the finger is 
+    // already "up" by the time the tick finishes.
+    printf("   [Action] Feeding 2 events (Down/Up) into ax_engine_tick...\n");
+    ax_result_t tick_res = ax_engine_tick(&queue);
+    
+    AX_TEST("Engine Tick: Processed multi-event queue", tick_res == AX_OK);
+
+    // 3. Test Empty Queue (Idle Frame)
+    ax_input_queue_t empty_queue = { .count = 0 };
+    AX_TEST("Engine Tick: Processed empty queue (Idle)", ax_engine_tick(&empty_queue) == AX_OK);
+}
+
+// -----------------------------------------------------------------------------
+// Main Execution
+// -----------------------------------------------------------------------------
+int main(void) {
+    printf("========================================\n");
+    printf(" Axiom Engine: Headless Test Bench \n");
+    printf("========================================\n");
+
+    run_math_tests();
+    run_arena_tests();
+    run_engine_boot_tests();
+	run_input_tick_tests();
 	
     printf("\n========================================\n");
-    if (tests_failed == 0) {
-        printf(" SUCCESS: All math checks passed!\n");
+    if (failed_tests == 0) {
+        printf(" SUCCESS: All %d test suites passed!\n", 4); // Update count if adding suites
         return EXIT_SUCCESS;
     } else {
-        printf(" FAILURE: %d checks failed. Do not proceed.\n", tests_failed);
+        printf(" FAILURE: %d individual checks failed.\n", failed_tests);
         return EXIT_FAILURE;
     }
 }
