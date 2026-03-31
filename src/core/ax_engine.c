@@ -113,8 +113,8 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
 
     // Set initial physics parameters (e.g., a 100x100 arena, moving at 2.5 units per frame)
     g_engine.state->frame_count = 0;
-    g_engine.state->bounds.x = AX_INT_TO_FIXED(100);
-    g_engine.state->bounds.y = AX_INT_TO_FIXED(100);
+    g_engine.state->bounds.x = AX_INT_TO_FIXED(1000);
+    g_engine.state->bounds.y = AX_INT_TO_FIXED(1000);
     g_engine.state->position.x = AX_INT_TO_FIXED(50);
     g_engine.state->position.y = AX_INT_TO_FIXED(50);
     g_engine.state->velocity.x = AX_FLOAT_TO_FIXED(2.5f); 
@@ -137,19 +137,41 @@ ax_result_t ax_engine_teardown(void) {
 // -----------------------------------------------------------------------------
 // 4. The Deterministic Tick
 // -----------------------------------------------------------------------------
-ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue) {
+ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, ax_render_queue_t** out_render_queue) {
+    if (out_render_queue == NULL) return AX_ERR_INVALID_INPUT;
+    *out_render_queue = NULL; // Default to NULL for safety
+
     if (!g_engine.is_initialized) return AX_ERR_INVALID_INPUT;
 
+    // 1. Zero-Cost Garbage Collection
+    // Wipe last frame's scratchpad so we have fresh memory for this frame.
+    ax_arena_clear(&g_engine.frame_arena);
+
+    // 2. Update Engine Time
     g_engine.current_time_us = g_engine.api.get_ticks_us();
 
-    // Run the deterministic simulation
+    // 3. Run the deterministic physics simulation
     ax_result_t update_res = ax_engine_update(input_queue);
     if (update_res != AX_OK) return update_res;
 
-    // Render Submission would go here...
+    // -------------------------------------------------------------------------
+    // 4. The Render Submission Phase
+    // -------------------------------------------------------------------------
+    
+    // Allocate a queue from the fresh frame_arena (Max 256 commands for now)
+    ax_render_queue_t* render_queue = NULL;
+    ax_result_t q_res = ax_graphics_queue_create(&g_engine.frame_arena, 256, &render_queue);
+    if (q_res != AX_OK) return q_res;
 
-    // Zero-Cost Garbage Collection
-    ax_arena_clear(&g_engine.frame_arena);
+    // Command 1: Clear the background to a dark gray
+    ax_graphics_push_clear(render_queue, AX_COLOR_MAKE(30, 30, 30, 255));
+
+    // Command 2: Draw our bouncing object as a Red Square (10x10 units)
+    ax_vec2_t obj_size = { .x = AX_INT_TO_FIXED(10), .y = AX_INT_TO_FIXED(10) };
+    ax_graphics_push_rect(render_queue, g_engine.state->position, obj_size, AX_COLOR_RED);
+
+    // Hand the populated queue back to the host OS
+    *out_render_queue = render_queue;
 
     return AX_OK;
 }

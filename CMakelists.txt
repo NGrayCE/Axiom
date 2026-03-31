@@ -1,73 +1,45 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.10)
+project(Axiom C)
 
-# ------------------------------------------------------------------------------
-# 1. Project Definition
-# ------------------------------------------------------------------------------
-project(Axiom 
-    VERSION 0.1.0 
-    DESCRIPTION "A deterministic, zero-bloat C17 game engine."
-    LANGUAGES C
-)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED True)
 
-# ------------------------------------------------------------------------------
-# 2. C17 Standard Enforcement (The "Embedded" Rules)
-# ------------------------------------------------------------------------------
-# We strictly require C17. If the compiler doesn't support it, the build fails.
-set(CMAKE_C_STANDARD 17)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-
-# CRITICAL: Disable compiler-specific extensions (like GNU's inline asm tricks).
-# This ensures true portability across Android NDK (Clang) and Apple (Xcode).
-set(CMAKE_C_EXTENSIONS OFF) 
-
-# ------------------------------------------------------------------------------
-# 3. Strict Compiler Flags
-# ------------------------------------------------------------------------------
-# We treat the compiler as a strict linter. Any warning is an error (-Werror).
-if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
-    set(AXIOM_COMPILE_OPTIONS
-        -Wall
-        -Wextra
-        -Wpedantic
-        -Werror                     # Halts build on any warning
-        -Wstrict-prototypes         # Enforces strict C function signatures
-        -Wmissing-prototypes        # Catches functions missing from headers
-        -Wconversion                # Catches implicit type casting (e.g., float to int)
-        -Wshadow                    # Prevents variable shadowing
-        -fno-math-errno             # Optimizes math (we use custom fixed-point anyway)
-    )
-elseif(MSVC)
-    set(AXIOM_COMPILE_OPTIONS
-        /W4                         # Highest warning level
-        /WX                         # Warnings as errors
-        /wd4200                     # Allow zero-sized arrays (common in memory arenas)
-    )
-endif()
-
-# ------------------------------------------------------------------------------
-# 4. Engine Core Library (Static)
-# ------------------------------------------------------------------------------
+# --- 1. Core Engine Library ---
 set(AXIOM_HEADERS
     include/ax_math.h
     include/ax_core.h
     include/ax_platform.h
+    include/ax_graphics.h
 )
 
 set(AXIOM_SOURCES
     src/core/ax_arena.c
-	src/core/ax_engine.c
+    src/core/ax_engine.c
+    src/graphics/ax_graphics.c
 )
-# Build the static library
+
 add_library(axiom_core STATIC ${AXIOM_HEADERS} ${AXIOM_SOURCES})
 target_include_directories(axiom_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-# ------------------------------------------------------------------------------
-# 5. The Headless Test Bench (Phase 1 Target)
-# ------------------------------------------------------------------------------
-# Create the executable
-add_executable(axiom_headless src/platform/headless_main.c)
 
-# Link the engine core to the test bench
+# --- 2. Headless Test Bench ---
+add_executable(axiom_headless src/platform/headless_main.c)
 target_link_libraries(axiom_headless PRIVATE axiom_core)
 
-# Apply strict flags
-target_compile_options(axiom_headless PRIVATE ${AXIOM_COMPILE_OPTIONS})
+# --- 3. SDL3 Host Application ---
+set(SDL3_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vendor/SDL3)
+set(SDL3_INCLUDE_DIR ${SDL3_DIR}/include)
+set(SDL3_LIB_DIR ${SDL3_DIR}/lib/x64)
+
+add_executable(axiom_host_sdl src/platform/sdl_main.c)
+
+target_include_directories(axiom_host_sdl PRIVATE ${SDL3_INCLUDE_DIR})
+
+# Link the Axiom Core and the SDL3 library
+target_link_libraries(axiom_host_sdl PRIVATE axiom_core ${SDL3_LIB_DIR}/SDL3.lib)
+
+# Automatically copy SDL3.dll to the build folder
+add_custom_command(TARGET axiom_host_sdl POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    "${SDL3_LIB_DIR}/SDL3.dll"
+    $<TARGET_FILE_DIR:axiom_host_sdl>
+)

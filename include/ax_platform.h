@@ -3,6 +3,7 @@
 
 #include "ax_core.h"
 #include "ax_math.h"
+#include "ax_graphics.h"
 
 /**
  * @defgroup Platform Platform Abstraction Layer (PAL)
@@ -108,9 +109,10 @@ ax_result_t ax_engine_teardown(void);
 /**
  * @brief Advances the engine simulation by one deterministic tick.
  * @param input_queue The chronological queue of events that occurred since the last tick.
+ * @param out_render_queue Pointer to where the engine will write the frame's render commands.
  * @return AX_OK if the frame processed correctly.
  */
-ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue);
+ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, ax_render_queue_t** out_render_queue);
 
 /** @} */
 

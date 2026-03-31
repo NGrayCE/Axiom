@@ -128,14 +128,15 @@ static void run_input_tick_tests(void) {
     // 2. Trigger the tick
     // The engine should log "Touch Down registered" even though the finger is 
     // already "up" by the time the tick finishes.
-    printf("   [Action] Feeding 2 events (Down/Up) into ax_engine_tick...\n");
-    ax_result_t tick_res = ax_engine_tick(&queue);
+	// Update both tick calls to capture the render queue
+    ax_render_queue_t* render_queue = NULL;
+    ax_result_t tick_res = ax_engine_tick(&queue, &render_queue);
     
     AX_TEST("Engine Tick: Processed multi-event queue", tick_res == AX_OK);
 
-    // 3. Test Empty Queue (Idle Frame)
+    // Test Empty Queue
     ax_input_queue_t empty_queue = { .count = 0 };
-    AX_TEST("Engine Tick: Processed empty queue (Idle)", ax_engine_tick(&empty_queue) == AX_OK);
+    AX_TEST("Engine Tick: Processed empty queue", ax_engine_tick(&empty_queue, &render_queue) == AX_OK);
 }
 
 // -----------------------------------------------------------------------------
@@ -144,7 +145,7 @@ static void run_input_tick_tests(void) {
 static void run_determinism_test(void) {
     printf("\n--- Running 10-Second Determinism Crucible ---\n");
 
-    // --- THE FIX: Cleanly reboot the engine to clear Suite 4's inputs ---
+    // ---Cleanly reboot the engine to clear Suite 4's inputs ---
     ax_engine_teardown();
     
     ax_system_api_t fake_api = {
@@ -159,11 +160,12 @@ static void run_determinism_test(void) {
     // --------------------------------------------------------------------
 
     ax_input_queue_t empty_queue = { .count = 0 };
+    ax_render_queue_t* render_queue = NULL;
 
     printf("   [Action] Simulating 600 frames (10 seconds at 60Hz)...\n");
     
     for (uint32_t i = 0; i < 600; i++) {
-        ax_result_t res = ax_engine_tick(&empty_queue);
+        ax_result_t res = ax_engine_tick(&empty_queue, &render_queue);
         if (res != AX_OK) {
             printf("[FAIL] Engine tick failed at frame %d\n", i);
             failed_tests++;
@@ -171,9 +173,20 @@ static void run_determinism_test(void) {
         }
     }
 
-    // Retrieve the final state using the compliant API
+    // --- Graphics API Assertion ---
+    // Let's verify that on the 600th frame, the engine generated exactly 2 commands
+    AX_TEST("Graphics: Queue generated", render_queue != NULL);
+    AX_TEST("Graphics: Queue contains exactly 2 commands", render_queue->count == 2);
+    AX_TEST("Graphics: First command is CLEAR", render_queue->commands[0].type == AX_RENDER_CMD_CLEAR);
+    AX_TEST("Graphics: Second command is DRAW_RECT", render_queue->commands[1].type == AX_RENDER_CMD_DRAW_RECT);
+    
+    // Prove that the rectangle's draw position perfectly matches the physics state
     const ax_game_state_t* final_state = NULL;
     ax_result_t state_res = ax_engine_get_state(&final_state);
+    
+    ax_vec2_t render_pos = render_queue->commands[1].draw_rect.position;
+    AX_TEST("Graphics: Render coords match physics state", 
+            render_pos.x == final_state->position.x && render_pos.y == final_state->position.y);
     
     AX_TEST("Determinism: State retrieved successfully", state_res == AX_OK && final_state != NULL);
     AX_TEST("Determinism: Frame count is exactly 600", final_state->frame_count == 600);
