@@ -1,4 +1,5 @@
 #include "ax_platform.h"
+#include "ax_ui.h"
 #include <stddef.h>
 
 // -----------------------------------------------------------------------------
@@ -139,39 +140,83 @@ ax_result_t ax_engine_teardown(void) {
 // -----------------------------------------------------------------------------
 ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, ax_render_queue_t** out_render_queue) {
     if (out_render_queue == NULL) return AX_ERR_INVALID_INPUT;
-    *out_render_queue = NULL; // Default to NULL for safety
+    *out_render_queue = NULL; 
 
     if (!g_engine.is_initialized) return AX_ERR_INVALID_INPUT;
 
     // 1. Zero-Cost Garbage Collection
-    // Wipe last frame's scratchpad so we have fresh memory for this frame.
     ax_arena_clear(&g_engine.frame_arena);
 
-    // 2. Update Engine Time
+    // 2. Update Engine Time & Physics
     g_engine.current_time_us = g_engine.api.get_ticks_us();
-
-    // 3. Run the deterministic physics simulation
     ax_result_t update_res = ax_engine_update(input_queue);
     if (update_res != AX_OK) return update_res;
 
-    // -------------------------------------------------------------------------
-    // 4. The Render Submission Phase
-    // -------------------------------------------------------------------------
-    
-    // Allocate a queue from the fresh frame_arena (Max 256 commands for now)
+    // 3. Create the Render Queue
     ax_render_queue_t* render_queue = NULL;
-    ax_result_t q_res = ax_graphics_queue_create(&g_engine.frame_arena, 256, &render_queue);
+    ax_result_t q_res = ax_graphics_queue_create(&g_engine.frame_arena, 1024, &render_queue);
     if (q_res != AX_OK) return q_res;
 
-    // Command 1: Clear the background to a dark gray
-    ax_graphics_push_clear(render_queue, AX_COLOR_MAKE(30, 30, 30, 255));
+    // Clear the background to black to catch any gaps
+    ax_graphics_push_clear(render_queue, AX_COLOR_BLACK);
 
-    // Command 2: Draw our bouncing object as a Red Square (10x10 units)
-    ax_vec2_t obj_size = { .x = AX_INT_TO_FIXED(10), .y = AX_INT_TO_FIXED(10) };
-    ax_graphics_push_rect(render_queue, g_engine.state->position, obj_size, AX_COLOR_RED);
+    // -------------------------------------------------------------------------
+    // 4. Build and Solve the UI Layout
+    // -------------------------------------------------------------------------
+    ax_ui_context_t ui = {0};
+    
+    // We hardcode the screen size to 800x600 to match our SDL window for now
+    ax_ui_begin_frame(&ui, &g_engine.frame_arena, AX_INT_TO_FIXED(800), AX_INT_TO_FIXED(600));
+    
+    // The Root splits the screen Left-to-Right
+    ui.root->layout_dir = AX_UI_DIR_ROW; 
 
-    // Hand the populated queue back to the host OS
+    // --- Node A: The Sidebar ---
+    ax_ui_node_t* sidebar = NULL;
+    ax_ui_push_node(&ui, ui.root, &sidebar);
+    sidebar->width[0] = AX_SIZE_PX(200);   // Exactly 200px wide
+    sidebar->width[1] = AX_SIZE_PCT(1.0f); // 100% of the screen height
+    sidebar->layout_dir = AX_UI_DIR_COLUMN; // Children stack top-to-bottom
+    sidebar->bg_color = AX_COLOR_MAKE(40, 45, 55, 255); // Slate Gray
+
+    // --- Node B: Main Content Area ---
+    ax_ui_node_t* main_area = NULL;
+    ax_ui_push_node(&ui, ui.root, &main_area);
+    main_area->width[0] = AX_SIZE_FLEX(1); // Take ALL remaining width (800 - 200 = 600px)
+    main_area->width[1] = AX_SIZE_PCT(1.0f); // 100% of the screen height
+    main_area->bg_color = AX_COLOR_MAKE(25, 25, 30, 255); // Darker Gray
+
+    // --- Sidebar Children (Buttons) ---
+    ax_ui_node_t* btn1 = NULL;
+    ax_ui_push_node(&ui, sidebar, &btn1);
+    btn1->width[0] = AX_SIZE_PCT(1.0f); // Fill the 200px sidebar
+    btn1->width[1] = AX_SIZE_PX(60);    // 60px tall
+    btn1->bg_color = AX_COLOR_MAKE(70, 130, 180, 255); // Steel Blue
+
+    ax_ui_node_t* spacer = NULL;
+    ax_ui_push_node(&ui, sidebar, &spacer);
+    spacer->width[0] = AX_SIZE_PCT(1.0f);
+    spacer->width[1] = AX_SIZE_PX(10);  // 10px invisible gap
+    spacer->bg_color = 0; // Transparent
+
+    ax_ui_node_t* btn2 = NULL;
+    ax_ui_push_node(&ui, sidebar, &btn2);
+    btn2->width[0] = AX_SIZE_PCT(1.0f);
+    btn2->width[1] = AX_SIZE_PX(60);
+    btn2->bg_color = AX_COLOR_MAKE(205, 92, 92, 255); // Indian Red
+
+    // 5. Run the Math Solver (O(N) Complexity)
+    ax_ui_solve_layout(&ui);
+
+    // 6. Translate the computed UI coordinates into Render Commands
+    ax_ui_draw(&ui, render_queue);
+
+    // -------------------------------------------------------------------------
+    // 7. Draw the Physics Object (Floating on top of the UI)
+    // -------------------------------------------------------------------------
+    ax_vec2_t obj_size = { .x = AX_INT_TO_FIXED(15), .y = AX_INT_TO_FIXED(15) };
+    ax_graphics_push_rect(render_queue, g_engine.state->position, obj_size, AX_COLOR_WHITE);
+
     *out_render_queue = render_queue;
-
     return AX_OK;
 }

@@ -80,7 +80,7 @@ int main(int argc, char* argv[]) {
                     // Convert float mouse coords to fixed-point
                     ax_event->position.x = AX_FLOAT_TO_FIXED(event.button.x);
                     ax_event->position.y = AX_FLOAT_TO_FIXED(event.button.y);
-                    ax_event->timestamp_us = sdl_get_ticks_us();
+                    ax_event->timestamp_us = (uint32_t)sdl_get_ticks_us();
                 }
             }
         }

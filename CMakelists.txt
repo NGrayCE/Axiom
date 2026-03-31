@@ -10,12 +10,14 @@ set(AXIOM_HEADERS
     include/ax_core.h
     include/ax_platform.h
     include/ax_graphics.h
+	include/ax_ui.h
 )
 
 set(AXIOM_SOURCES
     src/core/ax_arena.c
     src/core/ax_engine.c
     src/graphics/ax_graphics.c
+	src/ui/ax_ui.c
 )
 
 add_library(axiom_core STATIC ${AXIOM_HEADERS} ${AXIOM_SOURCES})
