@@ -61,25 +61,42 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    // 4. The Game Loop
     bool running = true;
     while (running) {
         SDL_Event event;
         ax_input_queue_t input_queue = {0};
+
+        // Query the physical screen size dynamically
+        int screen_w = 0, screen_h = 0;
+        SDL_GetWindowSizeInPixels(window, &screen_w, &screen_h);
 
         // Poll OS events
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_EVENT_QUIT) {
                 running = false;
             }
-            // Translate Mouse Clicks to Touch Events
+            // Desktop Mouse Support
             else if (event.type == SDL_EVENT_MOUSE_BUTTON_DOWN) {
                 if (input_queue.count < AX_MAX_INPUT_EVENTS_PER_FRAME) {
                     ax_input_event_t* ax_event = &input_queue.events[input_queue.count++];
                     ax_event->type = AX_INPUT_TOUCH_DOWN;
-                    // Convert float mouse coords to fixed-point
                     ax_event->position.x = AX_FLOAT_TO_FIXED(event.button.x);
                     ax_event->position.y = AX_FLOAT_TO_FIXED(event.button.y);
+                    ax_event->timestamp_us = (uint32_t)sdl_get_ticks_us();
+                }
+            }
+            // Mobile Touch Support (Normalized Coordinates)
+            else if (event.type == SDL_EVENT_FINGER_DOWN) {
+                if (input_queue.count < AX_MAX_INPUT_EVENTS_PER_FRAME) {
+                    ax_input_event_t* ax_event = &input_queue.events[input_queue.count++];
+                    ax_event->type = AX_INPUT_TOUCH_DOWN;
+                    
+                    // Convert normalized [0..1] finger position to physical pixels
+                    float pixel_x = event.tfinger.x * screen_w;
+                    float pixel_y = event.tfinger.y * screen_h;
+                    
+                    ax_event->position.x = AX_FLOAT_TO_FIXED(pixel_x);
+                    ax_event->position.y = AX_FLOAT_TO_FIXED(pixel_y);
                     ax_event->timestamp_us = (uint32_t)sdl_get_ticks_us();
                 }
             }
@@ -87,11 +104,12 @@ int main(int argc, char* argv[]) {
 
         // Tick the Engine
         ax_render_queue_t* render_queue = NULL;
-        if (ax_engine_tick(&input_queue, &render_queue) != AX_OK) {
+        if (ax_engine_tick(&input_queue, AX_INT_TO_FIXED(screen_w), AX_INT_TO_FIXED(screen_h), &render_queue) != AX_OK) {
             SDL_Log("Engine tick failed!");
             break;
         }
 
+        // ... (Keep the render loop the same, BUT update the UI call in ax_engine.c) ...
         // 5. Render the Engine's Output
         if (render_queue != NULL) {
             for (uint32_t i = 0; i < render_queue->count; i++) {

@@ -138,7 +138,11 @@ ax_result_t ax_engine_teardown(void) {
 // -----------------------------------------------------------------------------
 // 4. The Deterministic Tick
 // -----------------------------------------------------------------------------
-ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, ax_render_queue_t** out_render_queue) {
+ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, 
+                           ax_fixed_t screen_width, 
+                           ax_fixed_t screen_height, 
+                           ax_render_queue_t** out_render_queue) {
+
     if (out_render_queue == NULL) return AX_ERR_INVALID_INPUT;
     *out_render_queue = NULL; 
 
@@ -165,9 +169,9 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue, ax_render_queue_
     // -------------------------------------------------------------------------
     ax_ui_context_t ui = {0};
     
-    // We hardcode the screen size to 800x600 to match our SDL window for now
-    ax_ui_begin_frame(&ui, &g_engine.frame_arena, AX_INT_TO_FIXED(800), AX_INT_TO_FIXED(600));
-    
+    // Feed the dynamic size into the UI solver
+    ax_ui_begin_frame(&ui, &g_engine.frame_arena, screen_width, screen_height);
+
     // The Root splits the screen Left-to-Right
     ui.root->layout_dir = AX_UI_DIR_ROW; 
 
