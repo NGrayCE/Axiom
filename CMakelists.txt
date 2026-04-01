@@ -27,21 +27,45 @@ target_include_directories(axiom_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 add_executable(axiom_headless src/platform/headless_main.c)
 target_link_libraries(axiom_headless PRIVATE axiom_core)
 
-# --- 3. SDL3 Host Application ---
-set(SDL3_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vendor/SDL3)
-set(SDL3_INCLUDE_DIR ${SDL3_DIR}/include)
-set(SDL3_LIB_DIR ${SDL3_DIR}/lib/x64)
+# --- 3. Host Application (Cross-Platform) ---
 
-add_executable(axiom_host_sdl src/platform/sdl_main.c)
+if(ANDROID)
+    # -------------------------------------------------------------------------
+    # ANDROID BUILD PIPELINE
+    # -------------------------------------------------------------------------
+    # 1. Tell CMake to compile the raw SDL3 source code we pasted into the jni folder
+    add_subdirectory(android/app/jni/SDL)
 
-target_include_directories(axiom_host_sdl PRIVATE ${SDL3_INCLUDE_DIR})
+    # 2. Android requires a SHARED library (.so), not an executable
+    add_library(axiom_host_sdl SHARED src/platform/sdl_main.c)
 
-# Link the Axiom Core and the SDL3 library
-target_link_libraries(axiom_host_sdl PRIVATE axiom_core ${SDL3_LIB_DIR}/SDL3.lib)
+    # 3. SDL's Java wrapper hardcodes the search for "libmain.so". 
+    # This forces CMake to output libmain.so instead of libaxiom_host_sdl.so
+    set_target_properties(axiom_host_sdl PROPERTIES OUTPUT_NAME "main")
 
-# Automatically copy SDL3.dll to the build folder
-add_custom_command(TARGET axiom_host_sdl POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-    "${SDL3_LIB_DIR}/SDL3.dll"
-    $<TARGET_FILE_DIR:axiom_host_sdl>
-)
+    # 4. Link against the dynamically compiled Android SDL3 target
+    target_link_libraries(axiom_host_sdl PRIVATE axiom_core SDL3::SDL3)
+
+else()
+    # -------------------------------------------------------------------------
+    # WINDOWS DESKTOP BUILD PIPELINE
+    # -------------------------------------------------------------------------
+    set(SDL3_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vendor/SDL3)
+    set(SDL3_INCLUDE_DIR ${SDL3_DIR}/include)
+    set(SDL3_LIB_DIR ${SDL3_DIR}/lib/x64)
+
+    # Windows requires a standard executable (.exe)
+    add_executable(axiom_host_sdl src/platform/sdl_main.c)
+
+    target_include_directories(axiom_host_sdl PRIVATE ${SDL3_INCLUDE_DIR})
+    
+    # Link against the pre-compiled Windows binaries
+    target_link_libraries(axiom_host_sdl PRIVATE axiom_core ${SDL3_LIB_DIR}/SDL3.lib)
+
+    # Copy the DLL next to the executable
+    add_custom_command(TARGET axiom_host_sdl POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${SDL3_LIB_DIR}/SDL3.dll"
+        $<TARGET_FILE_DIR:axiom_host_sdl>
+    )
+endif()

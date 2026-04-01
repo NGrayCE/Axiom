@@ -1,4 +1,5 @@
 #include <SDL3/SDL.h>
+#include <SDL3/SDL_main.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -28,6 +29,8 @@ static ax_result_t sdl_read_asset(const char* filename, void** out_buffer, size_
 // -----------------------------------------------------------------------------
 
 int main(int argc, char* argv[]) {
+    (void)argc; (void)argv;
+
     // 1. Initialize SDL3
     if (!SDL_Init(SDL_INIT_VIDEO)) {
         SDL_Log("Failed to initialize SDL: %s", SDL_GetError());
@@ -109,7 +112,6 @@ int main(int argc, char* argv[]) {
             break;
         }
 
-        // ... (Keep the render loop the same, BUT update the UI call in ax_engine.c) ...
         // 5. Render the Engine's Output
         if (render_queue != NULL) {
             for (uint32_t i = 0; i < render_queue->count; i++) {

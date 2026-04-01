@@ -1,0 +1,138 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"build" : "android/app/jni/SDL",
+					"jsonFile" : "directory-android.app.jni.SDL-Debug-aeff1552f113e4b16b02.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "android/app/jni/SDL",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Axiom",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "SDL3",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3-shared::@c7bc182463c404825aba",
+					"jsonFile" : "target-SDL3-shared-Debug-13ad0d2d6444c0689fbc.json",
+					"name" : "SDL3-shared",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL3_test::@c7bc182463c404825aba",
+					"jsonFile" : "target-SDL3_test-Debug-0da95dc40ca10f3bad44.json",
+					"name" : "SDL3_test",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "SDL_uclibc::@c7bc182463c404825aba",
+					"jsonFile" : "target-SDL_uclibc-Debug-4eedf310a5e12d843ec4.json",
+					"name" : "SDL_uclibc",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "axiom_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-axiom_core-Debug-f0281faa1afb261cae24.json",
+					"name" : "axiom_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "axiom_headless::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-axiom_headless-Debug-0afab3f77a1768c79715.json",
+					"name" : "axiom_headless",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "axiom_host_sdl::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-axiom_host_sdl-Debug-57cf4819ff99b022a3c6.json",
+					"name" : "axiom_host_sdl",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/armeabi-v7a",
+		"source" : "C:/dev/Axiom/Axiom"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

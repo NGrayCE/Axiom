@@ -1,0 +1,4901 @@
+The target system is: Android - 1 - x86_64
+The host system is: Windows - 10.0.26200 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe 
+Build flags: -g;-DANDROID;-fdata-sections;-ffunction-sections;-funwind-tables;-fstack-protector-strong;-no-canonical-prefixes;-D_FORTIFY_SOURCE=2;-Wformat;-Werror=format-security;
+Id flags: -c;--target=x86_64-none-linux-android21 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is Clang, found in "C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdC/CMakeCCompilerId.o"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b96e3 && [1/2] Building C object CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o
+Android (13624864, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+Target: x86_64-none-linux-android21
+Thread model: posix
+InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin
+ (in-process)
+ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe" -cc1 -triple x86_64-none-linux-android21 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -target-feature +sse4.2 -target-feature +popcnt -target-feature +cx16 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -resource-dir C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19 -dependency-file "CMakeFiles\\cmTC_b96e3.dir\\CMakeCCompilerABI.c.o.d" -MT CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -ferror-limit 19 -femulated-tls -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o -x c C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+clang -cc1 version 19.0.1 based upon LLVM 19.0.1 default target x86_64-w64-windows-gnu
+ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include"
+ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include
+End of search list.
+[2/2] Linking C executable cmTC_b96e3
+Android (13624864, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+Target: x86_64-none-linux-android21
+Thread model: posix
+InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin
+ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld" --sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -z now -z relro -z max-page-size=16384 --hash-style=both --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /system/bin/linker64 -o cmTC_b96e3 C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl -lc C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  end of search list found
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  implicit include dirs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.lld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b96e3 && [1/2] Building C object CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o]
+  ignore line: [Android (13624864  based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)]
+  ignore line: [Target: x86_64-none-linux-android21]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin]
+  ignore line: [ (in-process)]
+  ignore line: [ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe" -cc1 -triple x86_64-none-linux-android21 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -target-feature +sse4.2 -target-feature +popcnt -target-feature +cx16 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -resource-dir C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19 -dependency-file "CMakeFiles\\cmTC_b96e3.dir\\CMakeCCompilerABI.c.o.d" -MT CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -ferror-limit 19 -femulated-tls -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o -x c C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCCompilerABI.c]
+  ignore line: [clang -cc1 version 19.0.1 based upon LLVM 19.0.1 default target x86_64-w64-windows-gnu]
+  ignore line: [ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [[2/2] Linking C executable cmTC_b96e3]
+  ignore line: [Android (13624864  based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)]
+  ignore line: [Target: x86_64-none-linux-android21]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin]
+  link line: [ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld" --sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -z now -z relro -z max-page-size=16384 --hash-style=both --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /system/bin/linker64 -o cmTC_b96e3 C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl -lc C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld] ==> ignore
+    arg [--sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-zmax-page-size=16384] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker64] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_b96e3] ==> ignore
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o] ==> obj [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+    arg [--build-id=sha1] ==> ignore
+    arg [--no-rosegment] ==> ignore
+    arg [--no-undefined-version] ==> ignore
+    arg [--fatal-warnings] ==> ignore
+    arg [--no-undefined] ==> ignore
+    arg [CMakeFiles/cmTC_b96e3.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a] ==> lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+    arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a] ==> lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+    arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+    arg [-ldl] ==> lib [dl]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o] ==> obj [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+  remove lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+  remove lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  implicit libs: [-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+  implicit objs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+  implicit dirs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test HAVE_GCC_WALL succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4f41c && [1/2] Building C object CMakeFiles/cmTC_4f41c.dir/src.c.o
+[2/2] Linking C executable cmTC_4f41c
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WUNDEF succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9effa && [1/2] Building C object CMakeFiles/cmTC_9effa.dir/src.c.o
+[2/2] Linking C executable cmTC_9effa
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WFLOAT_CONVERSION succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_82970 && [1/2] Building C object CMakeFiles/cmTC_82970.dir/src.c.o
+[2/2] Linking C executable cmTC_82970
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_NO_STRICT_ALIASING succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_87230 && [1/2] Building C object CMakeFiles/cmTC_87230.dir/src.c.o
+[2/2] Linking C executable cmTC_87230
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WDOCUMENTATION succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_cba1d && [1/2] Building C object CMakeFiles/cmTC_cba1d.dir/src.c.o
+[2/2] Linking C executable cmTC_cba1d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WDOCUMENTATION_UNKNOWN_COMMAND succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_fe40b && [1/2] Building C object CMakeFiles/cmTC_fe40b.dir/src.c.o
+[2/2] Linking C executable cmTC_fe40b
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_COMMENT_BLOCK_COMMANDS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_947f1 && [1/2] Building C object CMakeFiles/cmTC_947f1.dir/src.c.o
+[2/2] Linking C executable cmTC_947f1
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WSHADOW succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_82f8a && [1/2] Building C object CMakeFiles/cmTC_82f8a.dir/src.c.o
+[2/2] Linking C executable cmTC_82f8a
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WUNUSED_LOCAL_TYPEDEFS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_07a4d && [1/2] Building C object CMakeFiles/cmTC_07a4d.dir/src.c.o
+[2/2] Linking C executable cmTC_07a4d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_WIMPLICIT_FALLTHROUGH succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b5bc0 && [1/2] Building C object CMakeFiles/cmTC_b5bc0.dir/src.c.o
+[2/2] Linking C executable cmTC_b5bc0
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_FCOLOR_DIAGNOSTICS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_85704 && [1/2] Building C object CMakeFiles/cmTC_85704.dir/src.c.o
+[2/2] Linking C executable cmTC_85704
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test HAVE_WL_VERSION_SCRIPT succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_d5d91 && [1/2] Building C object CMakeFiles/cmTC_d5d91.dir/src.c.o
+[2/2] Linking C executable cmTC_d5d91
+
+
+Source file was:
+int func(void) {return 0;} int main(int argc,char*argv[]){(void)argc;(void)argv;return func();}
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_GCC_ATOMICS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5a808 && [1/2] Building C object CMakeFiles/cmTC_5a808.dir/src.c.o
+[2/2] Linking C executable cmTC_5a808
+
+
+Source file was:
+int main(int argc, char **argv) {
+        int a;
+        void *x, *y, *z;
+        __sync_lock_test_and_set(&a, 4);
+        __sync_lock_test_and_set(&x, y);
+        __sync_fetch_and_add(&a, 1);
+        __sync_bool_compare_and_swap(&a, 5, 10);
+        __sync_bool_compare_and_swap(&x, y, z);
+        return 0; }
+Performing C SOURCE FILE Test HAVE_GCC_FVISIBILITY succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_a642b && [1/2] Building C object CMakeFiles/cmTC_a642b.dir/src.c.o
+[2/2] Linking C executable cmTC_a642b
+
+
+Source file was:
+
+      #if !defined(__GNUC__) || __GNUC__ < 4
+      #error SDL only uses visibility attributes in GCC 4 or newer
+      #endif
+      __attribute__((visibility("default"))) int foo(void);
+      __attribute__((visibility("hidden")))  int bar(void);
+      int foo(void) { return 0; }
+      int bar(void) { return 1; }
+      int main(void) { return 0; }
+Performing C SOURCE FILE Test LINKER_SUPPORTS_WL_NO_UNDEFINED succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_449c8 && [1/2] Building C object CMakeFiles/cmTC_449c8.dir/src.c.o
+[2/2] Linking C executable cmTC_449c8
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_MMX succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_fa5ce && [1/2] Building C object CMakeFiles/cmTC_fa5ce.dir/src.c.o
+[2/2] Linking C executable cmTC_fa5ce
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <mmintrin.h>
+      void ints_add(int *dest, int *a, int *b, unsigned size) {
+        for (; size >= 2; size -= 2, dest += 2, a += 2, b += 2) {
+          *(__m64*)dest = _mm_add_pi32(*(__m64*)a, *(__m64*)b);
+        }
+      }
+      int main(int argc, char *argv[]) {
+        ints_add((int*)0, (int*)0, (int*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_SSE succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7e130 && [1/2] Building C object CMakeFiles/cmTC_7e130.dir/src.c.o
+[2/2] Linking C executable cmTC_7e130
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <xmmintrin.h>
+      void floats_add(float *dest, float *a, float *b, unsigned size) {
+        for (; size >= 4; size -= 4, dest += 4, a += 4, b += 4) {
+          _mm_storeu_ps(dest, _mm_add_ps(_mm_loadu_ps(a), _mm_loadu_ps (b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        floats_add((float*)0, (float*)0, (float*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_SSE2 succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_aaee6 && [1/2] Building C object CMakeFiles/cmTC_aaee6.dir/src.c.o
+[2/2] Linking C executable cmTC_aaee6
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <emmintrin.h>
+      void doubles_add(double *dest, double *a, double *b, unsigned size) {
+        for (; size >= 4; size -= 4, dest += 4, a += 4, b += 4) {
+          _mm_store_pd(dest, _mm_add_pd(_mm_loadu_pd(a), _mm_loadu_pd(b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        doubles_add((double*)0, (double*)0, (double*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_SSE3 succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_26e2c && [1/2] Building C object CMakeFiles/cmTC_26e2c.dir/src.c.o
+[2/2] Linking C executable cmTC_26e2c
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <pmmintrin.h>
+      void ints_add(int *dest, int *a, int *b, unsigned size) {
+        for (; size >= 4; size -= 4, dest += 4, a += 4, b += 4) {
+          _mm_storeu_si128((__m128i*)dest, _mm_add_epi32(_mm_lddqu_si128((__m128i*)a), _mm_lddqu_si128((__m128i*)b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        ints_add((int*)0, (int*)0, (int*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_SSE4_1 succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1005b && [1/2] Building C object CMakeFiles/cmTC_1005b.dir/src.c.o
+[2/2] Linking C executable cmTC_1005b
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <smmintrin.h>
+      void ints_mul(int *dest, int *a, int *b, unsigned size) {
+        for (; size >= 4; size -= 4, dest += 4, a += 4, b += 4) {
+          _mm_storeu_si128((__m128i*)dest, _mm_mullo_epi32(_mm_lddqu_si128((__m128i*)a), _mm_lddqu_si128((__m128i*)b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        ints_mul((int*)0, (int*)0, (int*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_SSE4_2 succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9ac47 && [1/2] Building C object CMakeFiles/cmTC_9ac47.dir/src.c.o
+[2/2] Linking C executable cmTC_9ac47
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <nmmintrin.h>
+      __m128i bitmask;
+      char data[16];
+      int main(int argc, char **argv) {
+        bitmask = _mm_cmpgt_epi64(_mm_set1_epi64x(0), _mm_loadu_si128((void*)data));
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_AVX succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_03fc7 && [1/2] Building C object CMakeFiles/cmTC_03fc7.dir/src.c.o
+[2/2] Linking C executable cmTC_03fc7
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <immintrin.h>
+      void floats_add(float *dest, float *a, float *b, unsigned size) {
+        for (; size >= 8; size -= 8, dest += 8, a += 8, b += 8) {
+          _mm256_storeu_ps(dest, _mm256_add_ps(_mm256_loadu_ps(a), _mm256_loadu_ps(b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        floats_add((float*)0, (float*)0, (float*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_AVX2 succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_a49cb && [1/2] Building C object CMakeFiles/cmTC_a49cb.dir/src.c.o
+[2/2] Linking C executable cmTC_a49cb
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <immintrin.h>
+      void ints_add(int *dest, int *a, int *b, unsigned size) {
+        for (; size >= 8; size -= 8, dest += 8, a += 8, b += 8) {
+          _mm256_storeu_si256((__m256i*)dest, _mm256_add_epi32(_mm256_loadu_si256((__m256i*)a), _mm256_loadu_si256((__m256i*)b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        ints_add((int*)0, (int*)0, (int*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Performing C SOURCE FILE Test COMPILER_SUPPORTS_AVX512F succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_cebda && [1/2] Building C object CMakeFiles/cmTC_cebda.dir/src.c.o
+[2/2] Linking C executable cmTC_cebda
+
+
+Source file was:
+
+    #if 0
+    # if defined(__i386__) || defined(__x86_64__)
+    #  define test_enabled 1
+    # else
+    #  define test_enabled 0 /* feign success in Apple multi-arch configs */
+    # endif
+    #else                    /* test normally */
+    # define test_enabled 1
+    #endif
+    #if test_enabled
+          #include <immintrin.h>
+      void floats_add(float *dest, float *a, float *b, unsigned size) {
+        for (; size >= 16; size -= 16, dest += 16, a += 16, b += 16) {
+          _mm512_storeu_ps(dest, _mm512_add_ps(_mm512_loadu_ps(a), _mm512_loadu_ps(b)));
+        }
+      }
+      int main(int argc, char **argv) {
+        floats_add((float*)0, (float*)0, (float*)0, 0);
+        return 0;
+      }
+    #else
+    int main(int argc, char *argv[]) {
+      (void)argc;
+      (void)argv;
+      return 0;
+    }
+    #endif
+Determining if the include file alloca.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1ba70 && [1/2] Building C object CMakeFiles/cmTC_1ba70.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_1ba70
+
+
+
+Determining if the include file float.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ee7fe && [1/2] Building C object CMakeFiles/cmTC_ee7fe.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_ee7fe
+
+
+
+Determining if the include file iconv.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_eddf1 && [1/2] Building C object CMakeFiles/cmTC_eddf1.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_eddf1
+
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_0ee51 && [1/2] Building C object CMakeFiles/cmTC_0ee51.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_0ee51
+
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_73cdc && [1/2] Building C object CMakeFiles/cmTC_73cdc.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_73cdc
+
+
+
+Determining if the include file malloc.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_0627a && [1/2] Building C object CMakeFiles/cmTC_0627a.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_0627a
+
+
+
+Determining if the include file math.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_21879 && [1/2] Building C object CMakeFiles/cmTC_21879.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_21879
+
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b9f5b && [1/2] Building C object CMakeFiles/cmTC_b9f5b.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_b9f5b
+
+
+
+Determining if the include file signal.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4eb87 && [1/2] Building C object CMakeFiles/cmTC_4eb87.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_4eb87
+
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_0d214 && [1/2] Building C object CMakeFiles/cmTC_0d214.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_0d214
+
+
+
+Determining if the include file stdbool.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_bc79e && [1/2] Building C object CMakeFiles/cmTC_bc79e.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_bc79e
+
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_80246 && [1/2] Building C object CMakeFiles/cmTC_80246.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_80246
+
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_d5d14 && [1/2] Building C object CMakeFiles/cmTC_d5d14.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_d5d14
+
+
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ec8f2 && [1/2] Building C object CMakeFiles/cmTC_ec8f2.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_ec8f2
+
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_76b13 && [1/2] Building C object CMakeFiles/cmTC_76b13.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_76b13
+
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_a30d4 && [1/2] Building C object CMakeFiles/cmTC_a30d4.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_a30d4
+
+
+
+Determining if the include file strings.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_16ae5 && [1/2] Building C object CMakeFiles/cmTC_16ae5.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_16ae5
+
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_de8b2 && [1/2] Building C object CMakeFiles/cmTC_de8b2.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_de8b2
+
+
+
+Determining if the include file time.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7e357 && [1/2] Building C object CMakeFiles/cmTC_7e357.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_7e357
+
+
+
+Determining if the include file wchar.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_401a1 && [1/2] Building C object CMakeFiles/cmTC_401a1.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_401a1
+
+
+
+Determining if the function pow exists in the m passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1611e && [1/2] Building C object CMakeFiles/cmTC_1611e.dir/CheckFunctionExists.c.o
+C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CheckFunctionExists.c:7:3: warning: incompatible redeclaration of library function 'pow' [-Wincompatible-library-redeclaration]
+    7 |   CHECK_FUNCTION_EXISTS(void);
+      |   ^
+<command line>:3:31: note: expanded from macro 'CHECK_FUNCTION_EXISTS'
+    3 | #define CHECK_FUNCTION_EXISTS pow
+      |                               ^
+C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CheckFunctionExists.c:7:3: note: 'pow' is a builtin with type 'double (double, double)'
+<command line>:3:31: note: expanded from macro 'CHECK_FUNCTION_EXISTS'
+    3 | #define CHECK_FUNCTION_EXISTS pow
+      |                               ^
+1 warning generated.
+[2/2] Linking C executable cmTC_1611e
+
+
+
+Determining if the abs exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_40b17 && [1/2] Building C object CMakeFiles/cmTC_40b17.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_40b17
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef abs
+  return ((int*)(&abs))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the acos exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4027e && [1/2] Building C object CMakeFiles/cmTC_4027e.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_4027e
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef acos
+  return ((int*)(&acos))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the acosf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ee027 && [1/2] Building C object CMakeFiles/cmTC_ee027.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ee027
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef acosf
+  return ((int*)(&acosf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the asin exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_417a6 && [1/2] Building C object CMakeFiles/cmTC_417a6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_417a6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef asin
+  return ((int*)(&asin))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the asinf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_468d2 && [1/2] Building C object CMakeFiles/cmTC_468d2.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_468d2
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef asinf
+  return ((int*)(&asinf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atan exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_6fd40 && [1/2] Building C object CMakeFiles/cmTC_6fd40.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6fd40
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atan
+  return ((int*)(&atan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atan2 exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1bcaa && [1/2] Building C object CMakeFiles/cmTC_1bcaa.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_1bcaa
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atan2
+  return ((int*)(&atan2))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atan2f exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7efb7 && [1/2] Building C object CMakeFiles/cmTC_7efb7.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_7efb7
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atan2f
+  return ((int*)(&atan2f))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atanf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_424c9 && [1/2] Building C object CMakeFiles/cmTC_424c9.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_424c9
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atanf
+  return ((int*)(&atanf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atof exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_783b0 && [1/2] Building C object CMakeFiles/cmTC_783b0.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_783b0
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atof
+  return ((int*)(&atof))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the atoi exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_f53c7 && [1/2] Building C object CMakeFiles/cmTC_f53c7.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_f53c7
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef atoi
+  return ((int*)(&atoi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the bcopy exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9f7b6 && [1/2] Building C object CMakeFiles/cmTC_9f7b6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9f7b6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef bcopy
+  return ((int*)(&bcopy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the ceil exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_c8e66 && [1/2] Building C object CMakeFiles/cmTC_c8e66.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c8e66
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ceil
+  return ((int*)(&ceil))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the ceilf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_557f8 && [1/2] Building C object CMakeFiles/cmTC_557f8.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_557f8
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ceilf
+  return ((int*)(&ceilf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the copysign exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_af73b && [1/2] Building C object CMakeFiles/cmTC_af73b.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_af73b
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef copysign
+  return ((int*)(&copysign))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the copysignf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5e674 && [1/2] Building C object CMakeFiles/cmTC_5e674.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5e674
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef copysignf
+  return ((int*)(&copysignf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the cos exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5275f && [1/2] Building C object CMakeFiles/cmTC_5275f.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5275f
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef cos
+  return ((int*)(&cos))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the cosf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4fd5b && [1/2] Building C object CMakeFiles/cmTC_4fd5b.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_4fd5b
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef cosf
+  return ((int*)(&cosf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the _Exit exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e71b3 && [1/2] Building C object CMakeFiles/cmTC_e71b3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_e71b3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef _Exit
+  return ((int*)(&_Exit))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the exp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1d743 && [1/2] Building C object CMakeFiles/cmTC_1d743.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_1d743
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef exp
+  return ((int*)(&exp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the expf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ebb49 && [1/2] Building C object CMakeFiles/cmTC_ebb49.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ebb49
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef expf
+  return ((int*)(&expf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fabs exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_a32dc && [1/2] Building C object CMakeFiles/cmTC_a32dc.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_a32dc
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fabs
+  return ((int*)(&fabs))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fabsf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3dbf3 && [1/2] Building C object CMakeFiles/cmTC_3dbf3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_3dbf3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fabsf
+  return ((int*)(&fabsf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the floor exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7f88b && [1/2] Building C object CMakeFiles/cmTC_7f88b.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_7f88b
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef floor
+  return ((int*)(&floor))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the floorf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_bd7ee && [1/2] Building C object CMakeFiles/cmTC_bd7ee.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_bd7ee
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef floorf
+  return ((int*)(&floorf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fmod exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1e0a7 && [1/2] Building C object CMakeFiles/cmTC_1e0a7.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_1e0a7
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fmod
+  return ((int*)(&fmod))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fmodf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ef218 && [1/2] Building C object CMakeFiles/cmTC_ef218.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ef218
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fmodf
+  return ((int*)(&fmodf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the fseeko exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e2109 && [1/2] Building C object CMakeFiles/cmTC_e2109.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_e2109
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fseeko
+  return ((int*)(&fseeko))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getenv exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_0326d && [1/2] Building C object CMakeFiles/cmTC_0326d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_0326d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getenv
+  return ((int*)(&getenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the log exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_93d62 && [1/2] Building C object CMakeFiles/cmTC_93d62.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_93d62
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef log
+  return ((int*)(&log))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the log10 exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3a0b7 && [1/2] Building C object CMakeFiles/cmTC_3a0b7.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_3a0b7
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef log10
+  return ((int*)(&log10))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the log10f exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_73628 && [1/2] Building C object CMakeFiles/cmTC_73628.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_73628
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef log10f
+  return ((int*)(&log10f))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the logf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9efa8 && [1/2] Building C object CMakeFiles/cmTC_9efa8.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9efa8
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef logf
+  return ((int*)(&logf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the lround exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_17332 && [1/2] Building C object CMakeFiles/cmTC_17332.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_17332
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef lround
+  return ((int*)(&lround))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the lroundf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7c9c1 && [1/2] Building C object CMakeFiles/cmTC_7c9c1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_7c9c1
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef lroundf
+  return ((int*)(&lroundf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the malloc exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5cbab && [1/2] Building C object CMakeFiles/cmTC_5cbab.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5cbab
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef malloc
+  return ((int*)(&malloc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the memcmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1b912 && [1/2] Building C object CMakeFiles/cmTC_1b912.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_1b912
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memcmp
+  return ((int*)(&memcmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the memcpy exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ddc61 && [1/2] Building C object CMakeFiles/cmTC_ddc61.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ddc61
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memcpy
+  return ((int*)(&memcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the memmove exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3f905 && [1/2] Building C object CMakeFiles/cmTC_3f905.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_3f905
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memmove
+  return ((int*)(&memmove))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the memset exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_185c6 && [1/2] Building C object CMakeFiles/cmTC_185c6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_185c6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef memset
+  return ((int*)(&memset))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the modf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_68d99 && [1/2] Building C object CMakeFiles/cmTC_68d99.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_68d99
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef modf
+  return ((int*)(&modf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the modff exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_74370 && [1/2] Building C object CMakeFiles/cmTC_74370.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_74370
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef modff
+  return ((int*)(&modff))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the pow exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_101d6 && [1/2] Building C object CMakeFiles/cmTC_101d6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_101d6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pow
+  return ((int*)(&pow))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the powf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9762a && [1/2] Building C object CMakeFiles/cmTC_9762a.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9762a
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef powf
+  return ((int*)(&powf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the putenv exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_529af && [1/2] Building C object CMakeFiles/cmTC_529af.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_529af
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef putenv
+  return ((int*)(&putenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the round exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_88098 && [1/2] Building C object CMakeFiles/cmTC_88098.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_88098
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef round
+  return ((int*)(&round))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the roundf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_7992d && [1/2] Building C object CMakeFiles/cmTC_7992d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_7992d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef roundf
+  return ((int*)(&roundf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the scalbn exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_c1684 && [1/2] Building C object CMakeFiles/cmTC_c1684.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c1684
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef scalbn
+  return ((int*)(&scalbn))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the scalbnf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_d1a36 && [1/2] Building C object CMakeFiles/cmTC_d1a36.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_d1a36
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef scalbnf
+  return ((int*)(&scalbnf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the setenv exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ae877 && [1/2] Building C object CMakeFiles/cmTC_ae877.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ae877
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setenv
+  return ((int*)(&setenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sin exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_36a1f && [1/2] Building C object CMakeFiles/cmTC_36a1f.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_36a1f
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sin
+  return ((int*)(&sin))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sinf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_563d2 && [1/2] Building C object CMakeFiles/cmTC_563d2.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_563d2
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sinf
+  return ((int*)(&sinf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sqrt exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_643d6 && [1/2] Building C object CMakeFiles/cmTC_643d6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_643d6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sqrt
+  return ((int*)(&sqrt))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sqrtf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_f6232 && [1/2] Building C object CMakeFiles/cmTC_f6232.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_f6232
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sqrtf
+  return ((int*)(&sqrtf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sscanf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_56a4d && [1/2] Building C object CMakeFiles/cmTC_56a4d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_56a4d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sscanf
+  return ((int*)(&sscanf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strchr exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ef966 && [1/2] Building C object CMakeFiles/cmTC_ef966.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ef966
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strchr
+  return ((int*)(&strchr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_959b5 && [1/2] Building C object CMakeFiles/cmTC_959b5.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_959b5
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcmp
+  return ((int*)(&strcmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strlcat exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4d545 && [1/2] Building C object CMakeFiles/cmTC_4d545.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_4d545
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcat
+  return ((int*)(&strlcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strlcpy exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_26a2e && [1/2] Building C object CMakeFiles/cmTC_26a2e.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_26a2e
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcpy
+  return ((int*)(&strlcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strlen exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_40331 && [1/2] Building C object CMakeFiles/cmTC_40331.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_40331
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlen
+  return ((int*)(&strlen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strncmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_05625 && [1/2] Building C object CMakeFiles/cmTC_05625.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_05625
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncmp
+  return ((int*)(&strncmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strnlen exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5fc12 && [1/2] Building C object CMakeFiles/cmTC_5fc12.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5fc12
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strnlen
+  return ((int*)(&strnlen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strpbrk exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_92cdd && [1/2] Building C object CMakeFiles/cmTC_92cdd.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_92cdd
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strpbrk
+  return ((int*)(&strpbrk))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strrchr exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ae3ae && [1/2] Building C object CMakeFiles/cmTC_ae3ae.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ae3ae
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strrchr
+  return ((int*)(&strrchr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strstr exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_01a77 && [1/2] Building C object CMakeFiles/cmTC_01a77.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_01a77
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strstr
+  return ((int*)(&strstr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtod exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4cab7 && [1/2] Building C object CMakeFiles/cmTC_4cab7.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_4cab7
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod
+  return ((int*)(&strtod))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtok_r exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b34b1 && [1/2] Building C object CMakeFiles/cmTC_b34b1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_b34b1
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtok_r
+  return ((int*)(&strtok_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtol exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_79220 && [1/2] Building C object CMakeFiles/cmTC_79220.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_79220
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtol
+  return ((int*)(&strtol))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoll exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e3eea && [1/2] Building C object CMakeFiles/cmTC_e3eea.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_e3eea
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoll
+  return ((int*)(&strtoll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoul exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5e8e4 && [1/2] Building C object CMakeFiles/cmTC_5e8e4.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5e8e4
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoul
+  return ((int*)(&strtoul))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoull exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_945b6 && [1/2] Building C object CMakeFiles/cmTC_945b6.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_945b6
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoull
+  return ((int*)(&strtoull))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the tan exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_20c68 && [1/2] Building C object CMakeFiles/cmTC_20c68.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_20c68
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef tan
+  return ((int*)(&tan))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the tanf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_ce094 && [1/2] Building C object CMakeFiles/cmTC_ce094.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_ce094
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef tanf
+  return ((int*)(&tanf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the trunc exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_00072 && [1/2] Building C object CMakeFiles/cmTC_00072.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_00072
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef trunc
+  return ((int*)(&trunc))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the truncf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_72701 && [1/2] Building C object CMakeFiles/cmTC_72701.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_72701
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef truncf
+  return ((int*)(&truncf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the unsetenv exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_9c3e2 && [1/2] Building C object CMakeFiles/cmTC_9c3e2.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9c3e2
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef unsetenv
+  return ((int*)(&unsetenv))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsnprintf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_800ed && [1/2] Building C object CMakeFiles/cmTC_800ed.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_800ed
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsnprintf
+  return ((int*)(&vsnprintf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the vsscanf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_d07b2 && [1/2] Building C object CMakeFiles/cmTC_d07b2.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_d07b2
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef vsscanf
+  return ((int*)(&vsscanf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcsnlen exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_6bea3 && [1/2] Building C object CMakeFiles/cmTC_6bea3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6bea3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcsnlen
+  return ((int*)(&wcsnlen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcscmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5ebb4 && [1/2] Building C object CMakeFiles/cmTC_5ebb4.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_5ebb4
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcscmp
+  return ((int*)(&wcscmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcsdup exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3e965 && [1/2] Building C object CMakeFiles/cmTC_3e965.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_3e965
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcsdup
+  return ((int*)(&wcsdup))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcslcat exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_4468d && [1/2] Building C object CMakeFiles/cmTC_4468d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_4468d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcslcat
+  return ((int*)(&wcslcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcslcpy exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e2f0e && [1/2] Building C object CMakeFiles/cmTC_e2f0e.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_e2f0e
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcslcpy
+  return ((int*)(&wcslcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcslen exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_e199d && [1/2] Building C object CMakeFiles/cmTC_e199d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_e199d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcslen
+  return ((int*)(&wcslen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcsncmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_f5261 && [1/2] Building C object CMakeFiles/cmTC_f5261.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_f5261
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcsncmp
+  return ((int*)(&wcsncmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcsstr exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_fa0bf && [1/2] Building C object CMakeFiles/cmTC_fa0bf.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_fa0bf
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcsstr
+  return ((int*)(&wcsstr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the wcstol exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b0547 && [1/2] Building C object CMakeFiles/cmTC_b0547.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_b0547
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef wcstol
+  return ((int*)(&wcstol))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcasestr exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_6e72d && [1/2] Building C object CMakeFiles/cmTC_6e72d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_6e72d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <float.h>
+#include <iconv.h>
+#include <inttypes.h>
+#include <limits.h>
+#include <malloc.h>
+#include <math.h>
+#include <memory.h>
+#include <signal.h>
+#include <stdarg.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/types.h>
+#include <time.h>
+#include <wchar.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcasestr
+  return ((int*)(&strcasestr))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test LIBC_HAS_ISINF succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_5008f && [1/2] Building C object CMakeFiles/cmTC_5008f.dir/src.c.o
+[2/2] Linking C executable cmTC_5008f
+
+
+Source file was:
+
+        #include <math.h>
+        int main() {
+          double d = 3.14159;
+          return isinf(d);
+        }
+      
+Performing C SOURCE FILE Test LIBC_ISINF_HANDLES_FLOAT succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_afd11 && [1/2] Building C object CMakeFiles/cmTC_afd11.dir/src.c.o
+[2/2] Linking C executable cmTC_afd11
+
+
+Source file was:
+
+      #include <math.h>
+      int main() {
+        float f = 3.14159f;
+        return isinf(f);
+      }
+    
+Performing C SOURCE FILE Test LIBC_HAS_ISINFF succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_15bfd && [1/2] Building C object CMakeFiles/cmTC_15bfd.dir/src.c.o
+[2/2] Linking C executable cmTC_15bfd
+
+
+Source file was:
+
+      #include <math.h>
+      int main() {
+        float f = 3.14159f;
+        return isinff(f);
+      }
+    
+Performing C SOURCE FILE Test LIBC_HAS_ISNAN succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_1052c && [1/2] Building C object CMakeFiles/cmTC_1052c.dir/src.c.o
+[2/2] Linking C executable cmTC_1052c
+
+
+Source file was:
+
+        #include <math.h>
+        int main() {
+          double d = 3.14159;
+          return isnan(d);
+        }
+      
+Performing C SOURCE FILE Test LIBC_ISNAN_HANDLES_FLOAT succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_c50cf && [1/2] Building C object CMakeFiles/cmTC_c50cf.dir/src.c.o
+[2/2] Linking C executable cmTC_c50cf
+
+
+Source file was:
+
+      #include <math.h>
+      int main() {
+        float f = 3.14159f;
+        return isnan(f);
+      }
+    
+Performing C SOURCE FILE Test LIBC_HAS_ISNANF succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b2b0f && [1/2] Building C object CMakeFiles/cmTC_b2b0f.dir/src.c.o
+[2/2] Linking C executable cmTC_b2b0f
+
+
+Source file was:
+
+      #include <math.h>
+      int main() {
+        float f = 3.14159f;
+        return isnanf(f);
+      }
+    
+Determining if the fdatasync exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_59fb3 && [1/2] Building C object CMakeFiles/cmTC_59fb3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_59fb3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef fdatasync
+  return ((int*)(&fdatasync))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the gethostname exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_c5424 && [1/2] Building C object CMakeFiles/cmTC_c5424.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_c5424
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef gethostname
+  return ((int*)(&gethostname))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getpagesize exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_449c3 && [1/2] Building C object CMakeFiles/cmTC_449c3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_449c3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpagesize
+  return ((int*)(&getpagesize))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getresgid exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_93b8d && [1/2] Building C object CMakeFiles/cmTC_93b8d.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_93b8d
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getresgid
+  return ((int*)(&getresgid))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getresuid exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_471d3 && [1/2] Building C object CMakeFiles/cmTC_471d3.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_471d3
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getresuid
+  return ((int*)(&getresuid))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sigaction exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_74130 && [1/2] Building C object CMakeFiles/cmTC_74130.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_74130
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <signal.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sigaction
+  return ((int*)(&sigaction))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the setjmp exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_10729 && [1/2] Building C object CMakeFiles/cmTC_10729.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_10729
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <setjmp.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef setjmp
+  return ((int*)(&setjmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the nanosleep exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3573e && [1/2] Building C object CMakeFiles/cmTC_3573e.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_3573e
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef nanosleep
+  return ((int*)(&nanosleep))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the gmtime_r exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_72b35 && [1/2] Building C object CMakeFiles/cmTC_72b35.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_72b35
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef gmtime_r
+  return ((int*)(&gmtime_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the localtime_r exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_cb522 && [1/2] Building C object CMakeFiles/cmTC_cb522.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_cb522
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <time.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef localtime_r
+  return ((int*)(&localtime_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the sysconf exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_83de5 && [1/2] Building C object CMakeFiles/cmTC_83de5.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_83de5
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef sysconf
+  return ((int*)(&sysconf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the getauxval exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_65b20 && [1/2] Building C object CMakeFiles/cmTC_65b20.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_65b20
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/auxv.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getauxval
+  return ((int*)(&getauxval))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the ppoll exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_241ac && [1/2] Building C object CMakeFiles/cmTC_241ac.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_241ac
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <poll.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ppoll
+  return ((int*)(&ppoll))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the posix_fallocate exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_d75e5 && [1/2] Building C object CMakeFiles/cmTC_d75e5.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_d75e5
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef posix_fallocate
+  return ((int*)(&posix_fallocate))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test HAVE_SA_SIGACTION succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_c1140 && [1/2] Building C object CMakeFiles/cmTC_c1140.dir/src.c.o
+[2/2] Linking C executable cmTC_c1140
+
+
+Source file was:
+
+#include <signal.h>
+
+int main()
+{
+  (void)sizeof(((struct sigaction *)0)->sa_sigaction);
+  return 0;
+}
+
+Performing C SOURCE FILE Test HAVE_ST_MTIM succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_726ff && [1/2] Building C object CMakeFiles/cmTC_726ff.dir/src.c.o
+[2/2] Linking C executable cmTC_726ff
+
+
+Source file was:
+
+#include <sys/stat.h>
+
+int main()
+{
+  (void)sizeof(((struct stat *)0)->st_mtim);
+  return 0;
+}
+
+Determining if the dlopen exist passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_f7acc && [1/2] Building C object CMakeFiles/cmTC_f7acc.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_f7acc
+
+
+File C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <dlfcn.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef dlopen
+  return ((int*)(&dlopen))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test HAVE_O_CLOEXEC succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_3b61d && [1/2] Building C object CMakeFiles/cmTC_3b61d.dir/src.c.o
+[2/2] Linking C executable cmTC_3b61d
+
+
+Source file was:
+
+    #include <fcntl.h>
+    int flag = O_CLOEXEC;
+    int main(int argc, char **argv) { return 0; }
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe 
+Build flags: -g;-DANDROID;-fdata-sections;-ffunction-sections;-funwind-tables;-fstack-protector-strong;-no-canonical-prefixes;-D_FORTIFY_SOURCE=2;-Wformat;-Werror=format-security;;
+Id flags: -c;--target=x86_64-none-linux-android21 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is Clang, found in "C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/3.22.1-g37088a8-dirty/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_2f7e1 && [1/2] Building CXX object CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o
+Android (13624864, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+Target: x86_64-none-linux-android21
+Thread model: posix
+InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin
+ (in-process)
+ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe" -cc1 -triple x86_64-none-linux-android21 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -target-feature +sse4.2 -target-feature +popcnt -target-feature +cx16 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -resource-dir C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19 -dependency-file "CMakeFiles\\cmTC_2f7e1.dir\\CMakeCXXCompilerABI.cpp.o.d" -MT CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -fdeprecated-macro -ferror-limit 19 -femulated-tls -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -x c++ C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 19.0.1 based upon LLVM 19.0.1 default target x86_64-w64-windows-gnu
+ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include"
+ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android
+ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include
+End of search list.
+[2/2] Linking CXX executable cmTC_2f7e1
+Android (13624864, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)
+Target: x86_64-none-linux-android21
+Thread model: posix
+InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin
+ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld" --sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -z now -z relro -z max-page-size=16384 --hash-style=both --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /system/bin/linker64 -o cmTC_2f7e1 C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lm C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl -lc C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1]
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+    add: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  end of search list found
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1]
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+  collapse include dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  implicit include dirs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.lld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_2f7e1 && [1/2] Building CXX object CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [Android (13624864  based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)]
+  ignore line: [Target: x86_64-none-linux-android21]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin]
+  ignore line: [ (in-process)]
+  ignore line: [ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe" -cc1 -triple x86_64-none-linux-android21 -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -target-feature +sse4.2 -target-feature +popcnt -target-feature +cx16 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -fdebug-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp -resource-dir C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19 -dependency-file "CMakeFiles\\cmTC_2f7e1.dir\\CMakeCXXCompilerABI.cpp.o.d" -MT CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -isysroot C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1 -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include -internal-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include -internal-externc-isystem C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include -Wformat -fdeprecated-macro -ferror-limit 19 -femulated-tls -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -x c++ C:/Users/nolan/AppData/Local/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 19.0.1 based upon LLVM 19.0.1 default target x86_64-w64-windows-gnu]
+  ignore line: [ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/c++/v1]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include/x86_64-linux-android]
+  ignore line: [ C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [[2/2] Linking CXX executable cmTC_2f7e1]
+  ignore line: [Android (13624864  based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)]
+  ignore line: [Target: x86_64-none-linux-android21]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin]
+  link line: [ "C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld" --sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot -z now -z relro -z max-page-size=16384 --hash-style=both --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /system/bin/linker64 -o cmTC_2f7e1 C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21 -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android -LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --no-undefined-version --fatal-warnings --no-undefined CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lm C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl -lc C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a -l:libunwind.a -ldl C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/bin/ld.lld] ==> ignore
+    arg [--sysroot=C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-zmax-page-size=16384] ==> ignore
+    arg [--hash-style=both] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker64] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_2f7e1] ==> ignore
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o] ==> obj [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android]
+    arg [-LC:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+    arg [--build-id=sha1] ==> ignore
+    arg [--no-rosegment] ==> ignore
+    arg [--no-undefined-version] ==> ignore
+    arg [--fatal-warnings] ==> ignore
+    arg [--no-undefined] ==> ignore
+    arg [CMakeFiles/cmTC_2f7e1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lm] ==> lib [m]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a] ==> lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+    arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a] ==> lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+    arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+    arg [-ldl] ==> lib [dl]
+    arg [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o] ==> obj [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+  remove lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+  remove lib [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-x86_64-android.a]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android]
+  collapse library dir [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib] ==> [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  implicit libs: [c++;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+  implicit objs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtbegin_dynamic.o;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21/crtend_android.o]
+  implicit dirs: [C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/lib/linux/x86_64;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android/21;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/x86_64-linux-android;C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test VULKAN_PASSED_ANDROID_CHECKS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_8ba19 && [1/2] Building C object CMakeFiles/cmTC_8ba19.dir/src.c.o
+[2/2] Linking C executable cmTC_8ba19
+
+
+Source file was:
+
+      #if defined(__ARM_ARCH) && __ARM_ARCH < 7
+      #error Vulkan doesn't work on this configuration
+      #endif
+      int main(int argc, char **argv) { return 0; }
+      
+Performing C SOURCE FILE Test HAVE_PTHREADS succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_03983 && [1/2] Building C object CMakeFiles/cmTC_03983.dir/src.c.o
+[2/2] Linking C executable cmTC_03983
+
+
+Source file was:
+
+        #include <pthread.h>
+        int main(int argc, char** argv) {
+          pthread_attr_t type;
+          pthread_attr_init(&type);
+          return 0;
+        }
+Performing C SOURCE FILE Test HAVE_RECURSIVE_MUTEXES succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_b9f42 && [1/2] Building C object CMakeFiles/cmTC_b9f42.dir/src.c.o
+[2/2] Linking C executable cmTC_b9f42
+
+
+Source file was:
+
+        #include <pthread.h>
+        int main(int argc, char **argv) {
+          pthread_mutexattr_t attr;
+          pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+          return 0;
+        }
+Performing C SOURCE FILE Test HAVE_PTHREADS_SEM succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_de699 && [1/2] Building C object CMakeFiles/cmTC_de699.dir/src.c.o
+[2/2] Linking C executable cmTC_de699
+
+
+Source file was:
+#include <pthread.h>
+                                 #include <semaphore.h>
+                                 int main(int argc, char **argv) { return 0; }
+Performing C SOURCE FILE Test COMPILER_HAS_SEM_TIMEDWAIT succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_fdf8d && [1/2] Building C object CMakeFiles/cmTC_fdf8d.dir/src.c.o
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/src.c:5:33: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+    5 |                   sem_timedwait(NULL, NULL);
+      |                                 ^~~~
+C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include/__stddef_null.h:26:14: note: expanded from macro 'NULL'
+   26 | #define NULL ((void*)0)
+      |              ^~~~~~~~~~
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp/src.c:5:39: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+    5 |                   sem_timedwait(NULL, NULL);
+      |                                       ^~~~
+C:/Users/nolan/AppData/Local/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/19/include/__stddef_null.h:26:14: note: expanded from macro 'NULL'
+   26 | #define NULL ((void*)0)
+      |              ^~~~~~~~~~
+2 warnings generated.
+[2/2] Linking C executable cmTC_fdf8d
+
+
+Source file was:
+
+              #include <pthread.h>
+              #include <semaphore.h>
+              int main(int argc, char **argv) {
+                  sem_timedwait(NULL, NULL);
+                  return 0;
+              }
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_445fa && [1/2] Building C object CMakeFiles/cmTC_445fa.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_445fa
+
+
+
+Performing C SOURCE FILE Test HAVE_PTHREAD_SETNAME_NP succeeded with the following output:
+Change Dir: C:/dev/Axiom/Axiom/android/app/.cxx/Debug/4u2l3i70/x86_64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:\Users\nolan\AppData\Local\Android\Sdk\cmake\3.22.1\bin\ninja.exe cmTC_76373 && [1/2] Building C object CMakeFiles/cmTC_76373.dir/src.c.o
+[2/2] Linking C executable cmTC_76373
+
+
+Source file was:
+
+            #include <pthread.h>
+            int main(int argc, char **argv) {
+              #ifdef __APPLE__
+              pthread_setname_np("");
+              #else
+              pthread_setname_np(pthread_self(),"");
+              #endif
+              return 0;
+            }

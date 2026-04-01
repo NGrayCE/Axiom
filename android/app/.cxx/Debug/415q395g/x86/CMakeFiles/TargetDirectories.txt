@@ -1,0 +1,10 @@
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/CMakeFiles/axiom_core.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/CMakeFiles/axiom_headless.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/CMakeFiles/axiom_host_sdl.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/CMakeFiles/edit_cache.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/CMakeFiles/rebuild_cache.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/android/app/jni/SDL/CMakeFiles/SDL3-shared.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/android/app/jni/SDL/CMakeFiles/SDL3_test.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/android/app/jni/SDL/CMakeFiles/SDL_uclibc.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/android/app/jni/SDL/CMakeFiles/edit_cache.dir
+C:/dev/Axiom/Axiom/android/app/.cxx/Debug/415q395g/x86/android/app/jni/SDL/CMakeFiles/rebuild_cache.dir

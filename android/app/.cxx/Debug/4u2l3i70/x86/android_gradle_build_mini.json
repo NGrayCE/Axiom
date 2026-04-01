@@ -1,0 +1,76 @@
+{
+  "buildFiles": [
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\CMakeLists.txt",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\3rdparty.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\FindLibUSB.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\GetGitRevisionDescription.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\macros.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\PreseedEmscriptenCache.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\PreseedMSVCCache.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\PreseedNokiaNGageCache.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\SDL3Config.cmake.in",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlchecks.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlcommands.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlcompilers.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlcpu.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlmanpages.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\cmake\\sdlplatform.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\include\\build_config\\SDL_build_config.h.cmake",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\jni\\SDL\\include\\build_config\\SDL_revision.h.cmake",
+    "C:\\dev\\Axiom\\Axiom\\CMakelists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\nolan\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\dev\\Axiom\\Axiom\\android\\app\\.cxx\\Debug\\4u2l3i70\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\nolan\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\dev\\Axiom\\Axiom\\android\\app\\.cxx\\Debug\\4u2l3i70\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "SDL3-shared::@441d29ff1658336bb958": {
+      "artifactName": "SDL3-shared",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\build\\intermediates\\cxx\\Debug\\4u2l3i70\\obj\\x86\\libSDL3.so",
+      "runtimeFiles": []
+    },
+    "SDL_uclibc::@441d29ff1658336bb958": {
+      "artifactName": "SDL_uclibc",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\.cxx\\Debug\\4u2l3i70\\x86\\android\\app\\jni\\sdl\\libSDL_uclibc.a",
+      "runtimeFiles": []
+    },
+    "axiom_core::@6890427a1f51a3e7e1df": {
+      "artifactName": "axiom_core",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\.cxx\\Debug\\4u2l3i70\\x86\\libaxiom_core.a",
+      "runtimeFiles": []
+    },
+    "SDL3_test::@441d29ff1658336bb958": {
+      "artifactName": "SDL3_test",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\.cxx\\Debug\\4u2l3i70\\x86\\android\\app\\jni\\sdl\\libSDL3_test.a",
+      "runtimeFiles": []
+    },
+    "axiom_host_sdl::@6890427a1f51a3e7e1df": {
+      "artifactName": "axiom_host_sdl",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\build\\intermediates\\cxx\\Debug\\4u2l3i70\\obj\\x86\\libmain.so",
+      "runtimeFiles": [
+        "C:\\dev\\Axiom\\Axiom\\android\\app\\build\\intermediates\\cxx\\Debug\\4u2l3i70\\obj\\x86\\libSDL3.so"
+      ]
+    },
+    "axiom_headless::@6890427a1f51a3e7e1df": {
+      "artifactName": "axiom_headless",
+      "abi": "x86",
+      "output": "C:\\dev\\Axiom\\Axiom\\android\\app\\build\\intermediates\\cxx\\Debug\\4u2l3i70\\obj\\x86\\axiom_headless",
+      "runtimeFiles": []
+    }
+  }
+}
