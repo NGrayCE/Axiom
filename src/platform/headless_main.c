@@ -186,7 +186,7 @@ static void run_determinism_test(void) {
     const ax_game_state_t* final_state = NULL;
     ax_engine_get_state(&final_state);
     
-    ax_vec2_t render_pos = phys_cmd->draw_rect.position;
+    ax_vec2_t render_pos = phys_cmd->as.draw_rect.position;
     AX_TEST("Graphics: Render coords match physics state", 
             render_pos.x == final_state->position.x && render_pos.y == final_state->position.y);
 

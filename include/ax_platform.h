@@ -4,6 +4,7 @@
 #include "ax_core.h"
 #include "ax_math.h"
 #include "ax_graphics.h"
+#include "ax_assets.h"
 
 /**
  * @defgroup Platform Platform Abstraction Layer (PAL)
@@ -119,6 +120,20 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue,
                            ax_fixed_t screen_height, 
                            ax_render_queue_t** out_render_queue);
 
+/**
+ * @brief Uploads raw CPU pixel data across the bus to the GPU VRAM.
+ * * @param image A constant pointer to the parsed CPU image data.
+ * @param out_texture A pointer to an ax_texture_t struct to populate with the GPU handle.
+ * @return ax_result_t AX_SUCCESS if the texture was allocated and uploaded, AX_FAILURE otherwise.
+ */
+ax_result_t ax_platform_upload_texture(const ax_image_t* image, ax_texture_t* out_texture);
+
+/**
+ * @brief Destroys a GPU texture, freeing its VRAM.
+ * * @param texture A pointer to the texture handle to destroy.
+ * @return ax_result_t AX_SUCCESS upon successful destruction.
+ */
+ax_result_t ax_platform_destroy_texture(ax_texture_t* texture);
 /** @} */
 
 #endif // AXIOM_PLATFORM_H
