@@ -3,6 +3,7 @@
 
 #include "ax_core.h"
 #include "ax_math.h"
+#include "ax_assets.h"
 
 /**
  * @defgroup Graphics Render Command Queue
@@ -30,8 +31,9 @@ typedef uint32_t ax_color_t;
  * @brief Identifies the type of render command.
  */
 typedef enum {
-    AX_RENDER_CMD_CLEAR = 0,    /**< Clears the entire screen to a specific color. */
-    AX_RENDER_CMD_DRAW_RECT     /**< Draws a filled 2D rectangle. */
+    AX_RENDER_CMD_CLEAR = 0,       /**< Clears the entire screen to a specific color. */
+    AX_RENDER_CMD_DRAW_RECT = 1,   /**< Draws a filled 2D rectangle. */
+    AX_RENDER_CMD_DRAW_TEXTURE = 2 /**< Command to draw a 2D texture to the screen. */
 } ax_render_cmd_type_t;
 
 /**
@@ -51,6 +53,26 @@ typedef struct {
 } ax_cmd_draw_rect_t;
 
 /**
+ * @struct ax_texture_t
+ * @brief The opaque handle that represents an image living on the GPU VRAM.
+ */
+typedef struct {
+    uint32_t width;         /**< The width of the texture in pixels. */
+    uint32_t height;        /**< The height of the texture in pixels. */
+    void* platform_handle;  /**< The internal platform-specific API handle (e.g., SDL_Texture*). */
+} ax_texture_t;
+
+/**
+ * @struct ax_cmd_draw_texture_t
+ * @brief Command payload: Draw a 2D texture.
+ */
+typedef struct {
+    const ax_texture_t* texture; /**< Pointer to the GPU texture handle. */
+    ax_vec2_t position;          /**< The X/Y screen coordinates for the top-left corner. */
+    ax_vec2_t size;              /**< The width and height to draw the texture. */
+} ax_cmd_draw_texture_t;
+
+/**
  * @brief A single, polymorphic render instruction.
  * @details Uses a tagged union to ensure all commands consume the exact same memory footprint, 
  * allowing them to be tightly packed into an array to maximize CPU cache hits.
@@ -60,7 +82,8 @@ typedef struct {
     union {
         ax_cmd_clear_t clear;
         ax_cmd_draw_rect_t draw_rect;
-    };
+        ax_cmd_draw_texture_t draw_texture;
+    } as;
 } ax_render_cmd_t;
 
 /**
@@ -98,6 +121,16 @@ ax_result_t ax_graphics_push_clear(ax_render_queue_t* queue, ax_color_t color);
  * @return AX_OK on success, or AX_ERR_OUT_OF_MEMORY if the queue is full.
  */
 ax_result_t ax_graphics_push_rect(ax_render_queue_t* queue, ax_vec2_t position, ax_vec2_t size, ax_color_t color);
+
+/**
+ * @brief Pushes a texture draw command to the render queue.
+ * @param queue A pointer to the active render queue.
+ * @param texture A constant pointer to the texture to draw.
+ * @param position The X/Y screen coordinates.
+ * @param size The physical width and height to draw the texture.
+ * @return ax_result_t AX_OK on success, or AX_ERR_OUT_OF_MEMORY if the queue is full.
+ */
+ax_result_t ax_graphics_push_texture(ax_render_queue_t* queue, const ax_texture_t* texture, ax_vec2_t position, ax_vec2_t size);
 
 /** @} */
 
