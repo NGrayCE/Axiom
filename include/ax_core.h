@@ -18,7 +18,11 @@ typedef enum {
     AX_OK = 0,                   /**< Operation completed successfully. */
     AX_ERR_OUT_OF_MEMORY = 1,    /**< The memory arena has exhausted its capacity. */
     AX_ERR_INVALID_INPUT = 2,    /**< A provided parameter was NULL or out of bounds. */
-    AX_ERR_UNALIGNED_ACCESS = 3  /**< Requested memory alignment was not a power of 2. */
+    AX_ERR_UNALIGNED_ACCESS = 3,  /**< Requested memory alignment was not a power of 2. */
+	// --- Asset & Graphics Errors ---
+    AX_ERR_ASSET_LOAD_FAILED = 4, /**< Failed to locate, open, or decode an asset file. */
+    AX_ERR_GPU_ALLOC_FAILED = 5,  /**< The GPU failed to allocate VRAM for a texture. */
+    AX_ERR_GPU_UPLOAD_FAILED = 6  /**< Failed to transfer data across the bus to the GPU. */
 } ax_result_t;
 
 /**

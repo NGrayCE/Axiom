@@ -52,7 +52,7 @@ ax_result_t ax_graphics_push_clear(ax_render_queue_t* queue, ax_color_t color) {
     
     // Populate the tagged union
     cmd->type = AX_RENDER_CMD_CLEAR;
-    cmd->clear.color = color;
+    cmd->as.clear.color = color;
     
     queue->count++;
     return AX_OK;
@@ -68,10 +68,29 @@ ax_result_t ax_graphics_push_rect(ax_render_queue_t* queue, ax_vec2_t position, 
     ax_render_cmd_t* cmd = &queue->commands[queue->count];
     
     cmd->type = AX_RENDER_CMD_DRAW_RECT;
-    cmd->draw_rect.position = position;
-    cmd->draw_rect.size = size;
-    cmd->draw_rect.color = color;
+    cmd->as.draw_rect.position = position;
+    cmd->as.draw_rect.size = size;
+    cmd->as.draw_rect.color = color;
     
     queue->count++;
+    return AX_OK;
+}
+
+ax_result_t ax_graphics_push_texture(ax_render_queue_t* queue, const ax_texture_t* texture, ax_vec2_t position, ax_vec2_t size) {
+    if (!queue || !texture) {
+        return AX_ERR_INVALID_INPUT;
+    }
+
+    if (queue->count >= queue->capacity) {
+        return AX_ERR_OUT_OF_MEMORY;
+    }
+
+    ax_render_cmd_t* cmd = &queue->commands[queue->count++];
+    
+    cmd->type = AX_RENDER_CMD_DRAW_TEXTURE;
+    cmd->as.draw_texture.texture = texture;
+    cmd->as.draw_texture.position = position;
+    cmd->as.draw_texture.size = size;
+
     return AX_OK;
 }

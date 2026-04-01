@@ -11,6 +11,7 @@ set(AXIOM_HEADERS
     include/ax_platform.h
     include/ax_graphics.h
 	include/ax_ui.h
+	include/ax_assets.h
 )
 
 set(AXIOM_SOURCES
@@ -18,10 +19,13 @@ set(AXIOM_SOURCES
     src/core/ax_engine.c
     src/graphics/ax_graphics.c
 	src/ui/ax_ui.c
+	src/assets/ax_assets.c
 )
 
 add_library(axiom_core STATIC ${AXIOM_HEADERS} ${AXIOM_SOURCES})
-target_include_directories(axiom_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(
+						axiom_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+						${CMAKE_CURRENT_SOURCE_DIR}/vendor/stb)
 
 # --- 2. Headless Test Bench ---
 add_executable(axiom_headless src/platform/headless_main.c)
