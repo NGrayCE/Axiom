@@ -15,9 +15,10 @@ typedef struct {
 
 /**
  * @brief Loads a PNG or BMP image from disk into the provided memory arena.
- * * @param arena A pointer to the memory arena to allocate the pixel data from.
- * @param filepath The null-terminated string representing the path to the image file.
+ * @param arena A pointer to the memory arena to allocate the pixel data from.
+ * @param file_data pointer to the start of the file
+ * @param file_size size of the flie being read
  * @param out_image A pointer to an ax_image_t struct to populate with the loaded data.
  * @return ax_result_t AX_SUCCESS if the image was successfully loaded and copied, AX_FAILURE otherwise.
  */
-ax_result_t ax_asset_load_image(ax_arena_t* arena, const char* filepath, ax_image_t* out_image);
+ax_result_t ax_asset_load_image(ax_arena_t* arena, const uint8_t* file_data, size_t file_size, ax_image_t* out_image);

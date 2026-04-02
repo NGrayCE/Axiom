@@ -84,7 +84,7 @@ typedef struct {
      * @param out_size Pointer where the file size will be written.
      * @return AX_OK on success, or an error code.
      */
-    ax_result_t (*read_asset)(const char* filename, void** out_buffer, size_t* out_size);
+	ax_result_t (*read_asset)(const char* filename, ax_arena_t* arena, void** out_buffer, size_t* out_size);
 } ax_system_api_t;
 
 /**

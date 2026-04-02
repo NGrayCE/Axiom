@@ -19,9 +19,32 @@ static void sdl_log_message(const char* message) {
     SDL_Log("[Engine] %s", message);
 }
 
-static ax_result_t sdl_read_asset(const char* filename, void** out_buffer, size_t* out_size) {
-    (void)filename; (void)out_buffer; (void)out_size;
-    return AX_ERR_INVALID_INPUT; // Stubbed for now
+static ax_result_t sdl_read_asset(const char* filename, ax_arena_t* arena, void** out_buffer, size_t* out_size) {
+    if (!filename || !arena || !out_buffer || !out_size) return AX_ERR_INVALID_INPUT;
+
+    size_t file_size = 0;
+    // SDL seamlessly handles Windows directories AND Android APKs
+    void* temp_data = SDL_LoadFile(filename, &file_size);
+
+    if (!temp_data) {
+        SDL_Log("SDL Failed to read asset '%s': %s", filename, SDL_GetError());
+        return AX_ERR_ASSET_LOAD_FAILED;
+    }
+
+    // Allocate permanent engine memory and copy the data over
+    void* arena_data = NULL;
+    ax_result_t res = ax_arena_push(arena, file_size, 1, &arena_data);
+    
+    if (res == AX_OK) {
+        memcpy(arena_data, temp_data, file_size);
+        *out_buffer = arena_data;
+        *out_size = file_size;
+    }
+
+    // Free the invisible malloc that SDL used under the hood
+    SDL_free(temp_data); 
+
+    return res;
 }
 
 // -----------------------------------------------------------------------------
@@ -108,9 +131,11 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    // 3. Allocate Engine Memory
-    void* main_ram = malloc(1024 * 1024);     // 1MB
-    void* frame_ram = malloc(256 * 1024);     // 256KB
+    size_t main_size = 1024 * 1024 * 16;
+    size_t frame_size = 1024 * 1024 * 16;
+    
+    void* main_ram = malloc(main_size);     
+    void* frame_ram = malloc(frame_size);   
 
     ax_system_api_t api = {
         .get_ticks_us = sdl_get_ticks_us,
@@ -118,43 +143,12 @@ int main(int argc, char* argv[]) {
         .read_asset = sdl_read_asset
     };
 
-    // Boot the Engine
-    if (ax_engine_boot(&api, main_ram, 1024 * 1024, frame_ram, 256 * 1024) != AX_OK) {
+    // Boot the Engine with the new expanded limits
+    if (ax_engine_boot(&api, main_ram, main_size, frame_ram, frame_size) != AX_OK) {
         SDL_Log("Engine failed to boot!");
         return -1;
     }
-	// ==============================================================================
-	// 1. INITIALIZATION
-	// ==============================================================================
 
-	size_t temp_ram_size = 1024 * 1024 * 4;
-    uint8_t* temp_img_ram = (uint8_t*)malloc(temp_ram_size); 
-    
-    ax_arena_t temp_arena;
-    ax_arena_init(&temp_arena, temp_img_ram, temp_ram_size);
-
-    ax_image_t raw_image = {0};
-    ax_texture_t test_texture = {0};
-
-    // Attempt to load the image into the temporary CPU arena
-    ax_result_t load_status = ax_asset_load_image(&temp_arena, "C:/dev/Axiom/add_image/build/Debug/test.png", &raw_image);
-	
-	if (load_status == AX_OK) {
-		// If it loaded, blast the pixels to the GPU
-		ax_result_t upload_status = ax_platform_upload_texture(&raw_image, &test_texture);
-		
-		if (upload_status != AX_OK) {
-			SDL_Log("Engine Error: GPU Upload failed with code %d", upload_status);
-		} else {
-			SDL_Log("Engine Success: Texture loaded and sitting in VRAM!");
-		}
-	} else {
-		SDL_Log("Engine Error: Failed to find or decode test.png. Code: %d", load_status);
-	}
-	
-    // We can completely delete the temporary CPU memory before the game loop starts!
-    free(temp_img_ram);
-	
     bool running = true;
     while (running) {
         SDL_Event event;
@@ -203,13 +197,6 @@ int main(int argc, char* argv[]) {
             break;
         }
 		
-		//Queue the texture
-		if (render_queue != NULL && test_texture.platform_handle != NULL) {
-            // Use fixed-point math, not floats!
-            ax_vec2_t pos = { AX_INT_TO_FIXED(100), AX_INT_TO_FIXED(100) };
-            ax_vec2_t size = { AX_INT_TO_FIXED(test_texture.width), AX_INT_TO_FIXED(test_texture.height) };
-            ax_graphics_push_texture(render_queue, &test_texture, pos, size);
-        }
         // 5. Render the Engine's Output
         if (render_queue != NULL) {
             for (uint32_t i = 0; i < render_queue->count; i++) {
@@ -268,8 +255,6 @@ int main(int argc, char* argv[]) {
     ax_engine_teardown();
     free(main_ram);
     free(frame_ram);
-	// Safely destroy the GPU handle before the program closes
-	ax_platform_destroy_texture(&test_texture);
     SDL_DestroyRenderer(g_renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();

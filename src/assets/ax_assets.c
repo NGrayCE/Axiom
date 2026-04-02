@@ -5,35 +5,26 @@
 #define STBI_ONLY_BMP
 #include "stb_image.h"
 
-ax_result_t ax_asset_load_image(ax_arena_t* arena, const char* filepath, ax_image_t* out_image) {
-    // 1. Guard against bad inputs
-    if (!arena || !filepath || !out_image) {
+ax_result_t ax_asset_load_image(ax_arena_t* arena, const uint8_t* file_data, size_t file_size, ax_image_t* out_image) {
+    if (!arena || !file_data || file_size == 0 || !out_image) {
         return AX_ERR_INVALID_INPUT;
     }
 
-    int temp_width = 0;
-    int temp_height = 0;
-    int temp_channels = 0;
+    int temp_width = 0, temp_height = 0, temp_channels = 0;
     int desired_channels = 4;
     
-    // 2. Attempt disk read and decode
-    uint8_t* temp_pixels = stbi_load(filepath, &temp_width, &temp_height, &temp_channels, desired_channels);
+    // We are now decoding purely from RAM. No hard drive access!
+    uint8_t* temp_pixels = stbi_load_from_memory(file_data, (int)file_size, &temp_width, &temp_height, &temp_channels, desired_channels);
+    
     if (!temp_pixels) {
-        // We couldn't find the file, or it wasn't a valid PNG/BMP
-		// ---- INJECT STB DIAGNOSTIC HERE ----
-        printf("\n======================================================\n");
-        printf("[STB ERROR] Failed to load: %s\n", filepath);
-        printf("[STB ERROR] Reason: %s\n", stbi_failure_reason());
-        printf("======================================================\n\n");
-        // ------------------------------------
         return AX_ERR_ASSET_LOAD_FAILED; 
     }
-
-    uint32_t safe_width = (uint32_t)temp_width;
+	
+	uint32_t safe_width = (uint32_t)temp_width;
     uint32_t safe_height = (uint32_t)temp_height;
     uint32_t safe_channels = (uint32_t)desired_channels;
     uint32_t image_size = safe_width * safe_height * safe_channels;
-    
+	
 	// 3. Attempt to secure permanent engine memory
     uint8_t* perm_pixels = NULL;
     

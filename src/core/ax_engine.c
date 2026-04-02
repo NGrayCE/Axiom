@@ -5,6 +5,13 @@
 // -----------------------------------------------------------------------------
 // 1. Internal Engine State (The Singleton Context)
 // -----------------------------------------------------------------------------
+#include <string.h>
+
+#define AX_MAX_ASSETS 32
+typedef struct {
+    char name[32];
+    ax_texture_t texture;
+} ax_asset_entry_t;
 
 typedef struct {
     ax_system_api_t api;
@@ -12,9 +19,10 @@ typedef struct {
     ax_arena_t frame_arena;
     bool is_initialized;
     uint64_t current_time_us;
-    
-    // Pointer to our live game state
     ax_game_state_t* state; 
+	//asset registry
+    ax_asset_entry_t assets[AX_MAX_ASSETS];
+    uint32_t asset_count;
 } ax_engine_context_t;
 
 static ax_engine_context_t g_engine = {0};
@@ -92,6 +100,50 @@ static ax_result_t ax_engine_update(const ax_input_queue_t* input_queue) {
 // -----------------------------------------------------------------------------
 // 3. Engine Boot Sequence
 // -----------------------------------------------------------------------------
+
+static const ax_texture_t* ax_engine_get_texture(const char* name) {
+    for (uint32_t i = 0; i < g_engine.asset_count; i++) {
+        if (strcmp(g_engine.assets[i].name, name) == 0) return &g_engine.assets[i].texture;
+    }
+    return NULL;
+}
+
+static ax_result_t ax_engine_load_texture(const char* name, const char* filepath) {
+    if (g_engine.asset_count >= AX_MAX_ASSETS) return AX_ERR_OUT_OF_MEMORY;
+
+    void* raw_file_data = NULL;
+    size_t file_size = 0;
+
+    // 1. Ask OS to read file (Unzips on Android, standard read on PC)
+    if (g_engine.api.read_asset(filepath, &g_engine.frame_arena, &raw_file_data, &file_size) != AX_OK) {
+        return AX_ERR_ASSET_LOAD_FAILED;
+    }
+
+    ax_image_t raw_image = {0};
+    ax_texture_t gpu_texture = {0};
+
+    // 2. Decode the bytes into pixels
+    ax_result_t res = ax_asset_load_image(&g_engine.frame_arena, (const uint8_t*)raw_file_data, file_size, &raw_image);
+    
+    // 3. Blast to VRAM
+    if (res == AX_OK) {
+        res = ax_platform_upload_texture(&raw_image, &gpu_texture);
+    }
+
+    // 4. Register it
+    if (res == AX_OK) {
+        ax_asset_entry_t* entry = &g_engine.assets[g_engine.asset_count++];
+        strncpy(entry->name, name, sizeof(entry->name) - 1);
+        entry->name[sizeof(entry->name) - 1] = '\0';
+        entry->texture = gpu_texture;
+    }
+
+    // 5. CRITICAL: Wipe the frame arena clean. The CPU pixels and file bytes are gone!
+    ax_arena_clear(&g_engine.frame_arena);
+
+    return res;
+}
+
 ax_result_t ax_engine_boot(const ax_system_api_t* api, 
                            void* main_memory, size_t main_size,
                            void* frame_memory, size_t frame_size) {
@@ -124,14 +176,32 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
     g_engine.is_initialized = true;
     g_engine.current_time_us = g_engine.api.get_ticks_us();
 
+	ax_result_t load_res = ax_engine_load_texture("player", "test.png");
+    
+    if (load_res != AX_OK) {
+        g_engine.api.log_message("[ERROR] Engine failed to load 'player' texture into registry!");
+    } else {
+        g_engine.api.log_message("[SUCCESS] 'player' texture loaded into registry!");
+    }
+	
     g_engine.api.log_message("[AXIOM] Engine Boot Sequence Complete.");
     return AX_OK;
 }
 
 
 ax_result_t ax_engine_teardown(void) {
+    // 1. Safely destroy only the textures we actually loaded
+    for(uint32_t i = 0; i < g_engine.asset_count; i++) {
+        ax_platform_destroy_texture(&g_engine.assets[i].texture);
+    }
+    
+    // 2. Reset the registry count
+    g_engine.asset_count = 0;
+
+    // 3. Clear core state
     g_engine.is_initialized = false;
     g_engine.state = NULL;
+    
     return AX_OK;
 }
 
@@ -215,11 +285,11 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue,
     // 6. Translate the computed UI coordinates into Render Commands
     ax_ui_draw(&ui, render_queue);
 
-    // -------------------------------------------------------------------------
-    // 7. Draw the Physics Object (Floating on top of the UI)
-    // -------------------------------------------------------------------------
-    ax_vec2_t obj_size = { .x = AX_INT_TO_FIXED(15), .y = AX_INT_TO_FIXED(15) };
-    ax_graphics_push_rect(render_queue, g_engine.state->position, obj_size, AX_COLOR_WHITE);
+    const ax_texture_t* player_tex = ax_engine_get_texture("player");
+    if (player_tex != NULL) {
+        ax_vec2_t size = { AX_INT_TO_FIXED(50), AX_INT_TO_FIXED(50) };
+        ax_graphics_push_texture(render_queue, player_tex, g_engine.state->position, size);
+    }
 
     *out_render_queue = render_queue;
     return AX_OK;
