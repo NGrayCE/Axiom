@@ -75,12 +75,48 @@ static void fake_os_log(const char* message) {
     printf("   > OS_CONSOLE: %s\n", message);
 }
 
-// Fake OS Function: Asset reading (stubbed)
-static ax_result_t fake_os_read_asset(const char* filename, void** out_buffer, size_t* out_size) {
-    (void)filename; (void)out_buffer; (void)out_size; 
-    return AX_ERR_INVALID_INPUT; 
+// Fake OS Function: Asset reading (Mocks a 1x1 PNG file)
+static ax_result_t fake_os_read_asset(const char* filename, ax_arena_t* arena, void** out_buffer, size_t* out_size) {
+    (void)filename;
+    
+    // A mathematically valid 1x1 pixel transparent PNG file
+    static const uint8_t fake_png[] = {
+        0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
+        0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01,
+        0x08, 0x06, 0x00, 0x00, 0x00, 0x1f, 0x15, 0xc4, 0x89, 0x00, 0x00, 0x00,
+        0x0a, 0x49, 0x44, 0x41, 0x54, 0x78, 0x9c, 0x63, 0x00, 0x01, 0x00, 0x00,
+        0x05, 0x00, 0x01, 0x0d, 0x0a, 0x2d, 0xb4, 0x00, 0x00, 0x00, 0x00, 0x49,
+        0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82
+    };
+
+    void* mem = NULL;
+    ax_result_t res = ax_arena_push(arena, sizeof(fake_png), 1, &mem);
+    
+    if (res == AX_OK) {
+        memcpy(mem, fake_png, sizeof(fake_png));
+        *out_buffer = mem;
+        *out_size = sizeof(fake_png);
+    }
+    return res;
 }
 
+// -----------------------------------------------------------------------------
+// Dummy GPU Boundaries (Prevents Linker Errors)
+// -----------------------------------------------------------------------------
+ax_result_t ax_platform_upload_texture(const ax_image_t* image, ax_texture_t* out_texture) {
+    if (!image || !out_texture) return AX_ERR_INVALID_INPUT;
+    
+    // Pretend we uploaded to the GPU and give it a fake claim ticket
+    out_texture->width = image->width;
+    out_texture->height = image->height;
+    out_texture->platform_handle = (void*)(uintptr_t)0xDEADBEEF; 
+    return AX_OK;
+}
+
+ax_result_t ax_platform_destroy_texture(ax_texture_t* texture) {
+    if (texture) texture->platform_handle = NULL;
+    return AX_OK;
+}
 
 static uint8_t fake_os_main_ram[1024 * 1024];     // 1MB
 static uint8_t fake_os_frame_ram[256 * 1024];     // 256KB
@@ -174,22 +210,21 @@ static void run_determinism_test(void) {
     }
 
     // --- Graphics API Assertion ---
-    // We now expect multiple commands (Clear + UI Rects + Physics Rect)
     AX_TEST("Graphics: Queue generated", render_queue != NULL);
     AX_TEST("Graphics: Queue contains UI and Physics", render_queue->count >= 6);
     
     // The physics object is always the LAST command pushed in our tick function
     ax_render_cmd_t* phys_cmd = &render_queue->commands[render_queue->count - 1];
-    AX_TEST("Graphics: Last command is DRAW_RECT", phys_cmd->type == AX_RENDER_CMD_DRAW_RECT);
     
-    // Prove that the rectangle's draw position perfectly matches the physics state
+    AX_TEST("Graphics: Last command is DRAW_TEXTURE", phys_cmd->type == AX_RENDER_CMD_DRAW_TEXTURE);
+    
     const ax_game_state_t* final_state = NULL;
     ax_engine_get_state(&final_state);
     
-    ax_vec2_t render_pos = phys_cmd->as.draw_rect.position;
+    ax_vec2_t render_pos = phys_cmd->as.draw_texture.position;
     AX_TEST("Graphics: Render coords match physics state", 
             render_pos.x == final_state->position.x && render_pos.y == final_state->position.y);
-
+			
     // -------------------------------------------------------------------------
     // The "Golden Master" Assertion
     // -------------------------------------------------------------------------
