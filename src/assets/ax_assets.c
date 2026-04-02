@@ -13,7 +13,7 @@ ax_result_t ax_asset_load_image(ax_arena_t* arena, const uint8_t* file_data, siz
     int temp_width = 0, temp_height = 0, temp_channels = 0;
     int desired_channels = 4;
     
-    // We are now decoding purely from RAM. No hard drive access!
+    // We are now decoding purely from RAM.
     uint8_t* temp_pixels = stbi_load_from_memory(file_data, (int)file_size, &temp_width, &temp_height, &temp_channels, desired_channels);
     
     if (!temp_pixels) {
@@ -25,7 +25,7 @@ ax_result_t ax_asset_load_image(ax_arena_t* arena, const uint8_t* file_data, siz
     uint32_t safe_channels = (uint32_t)desired_channels;
     uint32_t image_size = safe_width * safe_height * safe_channels;
 	
-	// 3. Attempt to secure permanent engine memory
+	//Attempt to secure permanent engine memory
     uint8_t* perm_pixels = NULL;
     
     // Safely request an array of bytes from the arena
@@ -36,7 +36,7 @@ ax_result_t ax_asset_load_image(ax_arena_t* arena, const uint8_t* file_data, siz
         stbi_image_free(temp_pixels);
         return AX_ERR_OUT_OF_MEMORY;
     }
-    // 4. Commit data
+    // Commit data
     memcpy(perm_pixels, temp_pixels, image_size);
 
     out_image->width = safe_width;

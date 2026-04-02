@@ -106,7 +106,7 @@ static ax_result_t fake_os_read_asset(const char* filename, ax_arena_t* arena, v
 ax_result_t ax_platform_upload_texture(const ax_image_t* image, ax_texture_t* out_texture) {
     if (!image || !out_texture) return AX_ERR_INVALID_INPUT;
     
-    // Pretend we uploaded to the GPU and give it a fake claim ticket
+    // Pretend we uploaded to the GPU and give it a fake platform handle
     out_texture->width = image->width;
     out_texture->height = image->height;
     out_texture->platform_handle = (void*)(uintptr_t)0xDEADBEEF; 

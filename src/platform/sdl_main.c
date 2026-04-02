@@ -73,7 +73,7 @@ ax_result_t ax_platform_upload_texture(const ax_image_t* image, ax_texture_t* ou
     }
 
     // 3. Attempt VRAM Upload
-    int pitch = (int)(image->width * 4);
+   int pitch = (int)(image->width * 4);
    bool upload_success = SDL_UpdateTexture(sdl_tex, NULL, image->pixels, pitch);
 
     if (!upload_success) {
@@ -131,6 +131,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
+	// Create the memory arenas
     size_t main_size = 1024 * 1024 * 16;
     size_t frame_size = 1024 * 1024 * 16;
     
@@ -143,7 +144,7 @@ int main(int argc, char* argv[]) {
         .read_asset = sdl_read_asset
     };
 
-    // Boot the Engine with the new expanded limits
+    // Boot the Engine
     if (ax_engine_boot(&api, main_ram, main_size, frame_ram, frame_size) != AX_OK) {
         SDL_Log("Engine failed to boot!");
         return -1;

@@ -125,7 +125,7 @@ static ax_result_t ax_engine_load_texture(const char* name, const char* filepath
     // 2. Decode the bytes into pixels
     ax_result_t res = ax_asset_load_image(&g_engine.frame_arena, (const uint8_t*)raw_file_data, file_size, &raw_image);
     
-    // 3. Blast to VRAM
+    // 3. send to VRAM
     if (res == AX_OK) {
         res = ax_platform_upload_texture(&raw_image, &gpu_texture);
     }
@@ -138,7 +138,7 @@ static ax_result_t ax_engine_load_texture(const char* name, const char* filepath
         entry->texture = gpu_texture;
     }
 
-    // 5. CRITICAL: Wipe the frame arena clean. The CPU pixels and file bytes are gone!
+    // 5. Wipe the frame arena clean.
     ax_arena_clear(&g_engine.frame_arena);
 
     return res;
@@ -160,7 +160,7 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
     ax_result_t res_frame = ax_arena_init(&g_engine.frame_arena, frame_memory, frame_size);
     if (res_frame != AX_OK) return res_frame;
 
-    // --- NEW: Allocate and initialize the Game State ---
+    // Allocate and initialize the Game State
     ax_result_t res_state = ax_push_struct(&g_engine.main_arena, ax_game_state_t, &g_engine.state);
     if (res_state != AX_OK) return res_state;
 
@@ -234,9 +234,7 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue,
     // Clear the background to black to catch any gaps
     ax_graphics_push_clear(render_queue, AX_COLOR_BLACK);
 
-    // -------------------------------------------------------------------------
     // 4. Build and Solve the UI Layout
-    // -------------------------------------------------------------------------
     ax_ui_context_t ui = {0};
     
     // Feed the dynamic size into the UI solver
