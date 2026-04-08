@@ -181,7 +181,8 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
 
 	// Load the texture into the registry
     ax_result_t load_res = ax_engine_load_texture("player", "test.png");
-    
+    ax_result_t font_res = ax_engine_load_texture("font", "font.png");
+	
 	// Set the physical boundaries of the world
     g_engine.state->bounds.x = AX_INT_TO_FIXED(800);
     g_engine.state->bounds.y = AX_INT_TO_FIXED(600);
@@ -195,7 +196,14 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
         g_engine.api.log_message("[SUCCESS] 'player' texture loaded into registry!");
     }
 	
-    g_engine.api.log_message("[AXIOM] Engine Boot Sequence Complete.");
+
+	if (font_res != AX_OK) {
+        g_engine.api.log_message("[ERROR] Engine failed to load 'font.png'!");
+    } else {
+        g_engine.api.log_message("[SUCCESS] Font loaded perfectly!");
+    }
+	
+	g_engine.api.log_message("[AXIOM] Engine Boot Sequence Complete.");
     return AX_OK;
 }
 
@@ -301,13 +309,16 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue,
 
         const ax_texture_t* tex = ax_engine_get_texture(e->texture_name);
         if (tex != NULL) {
-            ax_graphics_push_texture(render_queue, tex, e->position, e->size);
+            ax_vec2_t full_src_size = { AX_INT_TO_FIXED(tex->width), AX_INT_TO_FIXED(tex->height) };
+            ax_graphics_push_texture(render_queue, tex, e->position, e->size, (ax_vec2_t){0,0}, full_src_size);
         } else {
-            // Magenta fallback box if the texture name is wrong/missing
             ax_graphics_push_rect(render_queue, e->position, e->size, AX_COLOR_MAKE(255, 0, 255, 255));
         }
     }
-	
+	const ax_texture_t* font = ax_engine_get_texture("font");
+	ax_vec2_t text_pos = { AX_INT_TO_FIXED(50), AX_INT_TO_FIXED(50) };
+	ax_graphics_push_text(render_queue, font, "HELLO AXIOM ENGINE!", text_pos, 7, 7); // Change 8, 8 to match your downloaded font's glyph size
+
     *out_render_queue = render_queue;
     return AX_OK;
 }

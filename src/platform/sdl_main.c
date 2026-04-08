@@ -267,19 +267,26 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                     case AX_RENDER_CMD_DRAW_TEXTURE: {
-                        // Extract the raw SDL handle and draw it
-                        SDL_Texture* sdl_tex = (SDL_Texture*)cmd->as.draw_texture.texture->platform_handle;
-                        if (sdl_tex) {
-                            SDL_FRect dest_rect = {
-                                AX_FIXED_TO_FLOAT(cmd->as.draw_texture.position.x),
-                                AX_FIXED_TO_FLOAT(cmd->as.draw_texture.position.y),
-                                AX_FIXED_TO_FLOAT(cmd->as.draw_texture.size.x),
-                                AX_FIXED_TO_FLOAT(cmd->as.draw_texture.size.y)
-                            };
-                            SDL_RenderTexture(g_renderer, sdl_tex, NULL, &dest_rect);
-                        }
-                        break;
-                    }
+						SDL_Texture* sdl_tex = (SDL_Texture*)cmd->as.draw_texture.texture->platform_handle;
+						
+						// Define the slice of the image to use (convert fixed-point back to floats)
+						SDL_FRect src_rect;
+						src_rect.x = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.src_pos.x);
+						src_rect.y = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.src_pos.y);
+						src_rect.w = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.src_size.x);
+						src_rect.h = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.src_size.y);
+
+						// Define where it goes on the screen
+						SDL_FRect dst_rect;
+						dst_rect.x = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.dst_pos.x);
+						dst_rect.y = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.dst_pos.y);
+						dst_rect.w = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.dst_size.x);
+						dst_rect.h = AX_FIXED_TO_FLOAT(cmd->as.draw_texture.dst_size.y);
+
+						// Pass BOTH rectangles to the GPU
+						SDL_RenderTexture(g_renderer, sdl_tex, &src_rect, &dst_rect);
+						break;
+					}
                     default:
                         break;
                 }

@@ -67,9 +67,11 @@ typedef struct {
  * @brief Command payload: Draw a 2D texture.
  */
 typedef struct {
-    const ax_texture_t* texture; /**< Pointer to the GPU texture handle. */
-    ax_vec2_t position;          /**< The X/Y screen coordinates for the top-left corner. */
-    ax_vec2_t size;              /**< The width and height to draw the texture. */
+    const ax_texture_t* texture;
+			ax_vec2_t dst_pos;   // Where it goes on the screen
+			ax_vec2_t dst_size;  // How big it is on the screen
+			ax_vec2_t src_pos;   // NEW: Top-left pixel of the slice
+			ax_vec2_t src_size;  // NEW: Width/Height of the slice
 } ax_cmd_draw_texture_t;
 
 /**
@@ -130,7 +132,9 @@ ax_result_t ax_graphics_push_rect(ax_render_queue_t* queue, ax_vec2_t position, 
  * @param size The physical width and height to draw the texture.
  * @return ax_result_t AX_OK on success, or AX_ERR_OUT_OF_MEMORY if the queue is full.
  */
-ax_result_t ax_graphics_push_texture(ax_render_queue_t* queue, const ax_texture_t* texture, ax_vec2_t position, ax_vec2_t size);
+ax_result_t ax_graphics_push_texture(ax_render_queue_t* queue, const ax_texture_t* tex, 
+                              ax_vec2_t dst_pos, ax_vec2_t dst_size,
+                              ax_vec2_t src_pos, ax_vec2_t src_size);
 
 /** @} */
 
