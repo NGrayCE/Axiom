@@ -51,47 +51,38 @@ ax_result_t ax_engine_get_state(const ax_game_state_t** out_state) {
 static ax_result_t ax_engine_update(const ax_input_queue_t* input_queue) {
     ax_game_state_t* state = g_engine.state;
     state->frame_count++;
-
-    // 1. Process Inputs (Interact with the simulation)
-    if (input_queue != NULL) {
-        uint32_t count = input_queue->count > AX_MAX_INPUT_EVENTS_PER_FRAME ? 
-                         AX_MAX_INPUT_EVENTS_PER_FRAME : input_queue->count;
-                         
-        for (uint32_t i = 0; i < count; i++) {
-            const ax_input_event_t* event = &input_queue->events[i];
-            
-            if (event->type == AX_INPUT_TOUCH_DOWN) {
-                // Teleport the bouncing object directly to the touch position
-                state->position = event->position;
-                g_engine.api.log_message("[AXIOM] Physics: Object teleported to touch event.");
-            }
+	// 1. Process Inputs for the Player (entities[0])
+    ax_vec2_t player_intent = {0, 0};
+    
+    for (uint32_t i = 0; i < input_queue->count; i++) {
+        if (input_queue->events[i].type == AX_INPUT_PLAYER_MOVE) {
+            player_intent = input_queue->events[i].position;
         }
     }
 
-    // 2. Apply Velocity to Position (pos = pos + vel)
-    state->position = ax_vec2_add(state->position, state->velocity);
-
-    // 3. Resolve Collisions (Bounce off the walls)
-    // We use integer constants (-1) converted to fixed-point to invert velocity.
-    ax_fixed_t neg_one = AX_INT_TO_FIXED(-1);
-    ax_fixed_t zero = 0;
-
-    // Check X bounds
-    if (state->position.x <= zero) {
-        state->position.x = zero;
-        state->velocity.x = ax_math_mul(state->velocity.x, neg_one);
-    } else if (state->position.x >= state->bounds.x) {
-        state->position.x = state->bounds.x;
-        state->velocity.x = ax_math_mul(state->velocity.x, neg_one);
+    // 2. Apply Intent to Player Velocity (Speed = 5 pixels per frame)
+    if (state->entities[0].is_active) {
+        // In fixed-point math, multiplying a fixed 1.0 by an int 5 yields a fixed 5.0
+        state->entities[0].velocity.x = player_intent.x * 2; 
+        state->entities[0].velocity.y = player_intent.y * 2; 
     }
+    for (int i = 0; i < AX_MAX_ENTITIES; i++) {
+        ax_entity_t* e = &state->entities[i];
+        if (!e->is_active) continue;
 
-    // Check Y bounds
-    if (state->position.y <= zero) {
-        state->position.y = zero;
-        state->velocity.y = ax_math_mul(state->velocity.y, neg_one);
-    } else if (state->position.y >= state->bounds.y) {
-        state->position.y = state->bounds.y;
-        state->velocity.y = ax_math_mul(state->velocity.y, neg_one);
+        // Apply velocity
+        e->position.x += e->velocity.x;
+        e->position.y += e->velocity.y;
+
+        // Bounds collision
+        if (e->position.x < 0 || e->position.x + e->size.x > state->bounds.x) {
+            e->velocity.x = -e->velocity.x;
+            e->position.x += e->velocity.x; 
+        }
+        if (e->position.y < 0 || e->position.y + e->size.y > state->bounds.y) {
+            e->velocity.y = -e->velocity.y;
+            e->position.y += e->velocity.y;
+        }
     }
 
     return AX_OK;
@@ -144,6 +135,27 @@ static ax_result_t ax_engine_load_texture(const char* name, const char* filepath
     return res;
 }
 
+// Internal helper to spawn an entity into the pre-allocated main arena array
+static void ax_engine_spawn_entity(const char* tex_name, ax_fixed_t x, ax_fixed_t y, ax_fixed_t vx, ax_fixed_t vy, ax_fixed_t w, ax_fixed_t h) {
+    if (!g_engine.state) return;
+    
+    for (int i = 0; i < AX_MAX_ENTITIES; i++) {
+        if (!g_engine.state->entities[i].is_active) {
+            ax_entity_t* e = &g_engine.state->entities[i];
+            e->is_active = true;
+            e->position.x = x;
+            e->position.y = y;
+            e->velocity.x = vx;
+            e->velocity.y = vy;
+            e->size.x = w;
+            e->size.y = h;
+            strncpy(e->texture_name, tex_name, sizeof(e->texture_name) - 1);
+            e->texture_name[sizeof(e->texture_name) - 1] = '\0';
+            return; // Successfully spawned
+        }
+    }
+}
+
 ax_result_t ax_engine_boot(const ax_system_api_t* api, 
                            void* main_memory, size_t main_size,
                            void* frame_memory, size_t frame_size) {
@@ -164,20 +176,19 @@ ax_result_t ax_engine_boot(const ax_system_api_t* api,
     ax_result_t res_state = ax_push_struct(&g_engine.main_arena, ax_game_state_t, &g_engine.state);
     if (res_state != AX_OK) return res_state;
 
-    // Set initial physics parameters (e.g., a 100x100 arena, moving at 2.5 units per frame)
-    g_engine.state->frame_count = 0;
-    g_engine.state->bounds.x = AX_INT_TO_FIXED(1000);
-    g_engine.state->bounds.y = AX_INT_TO_FIXED(1000);
-    g_engine.state->position.x = AX_INT_TO_FIXED(50);
-    g_engine.state->position.y = AX_INT_TO_FIXED(50);
-    g_engine.state->velocity.x = AX_FLOAT_TO_FIXED(2.5f); 
-    g_engine.state->velocity.y = AX_FLOAT_TO_FIXED(1.25f);
-
     g_engine.is_initialized = true;
     g_engine.current_time_us = g_engine.api.get_ticks_us();
 
-	ax_result_t load_res = ax_engine_load_texture("player", "test.png");
+	// Load the texture into the registry
+    ax_result_t load_res = ax_engine_load_texture("player", "test.png");
     
+	// Set the physical boundaries of the world
+    g_engine.state->bounds.x = AX_INT_TO_FIXED(800);
+    g_engine.state->bounds.y = AX_INT_TO_FIXED(600);
+	// Change starting velocity to 0, 0!
+	ax_engine_spawn_entity("player", AX_INT_TO_FIXED(100), AX_INT_TO_FIXED(100), 0, 0, AX_INT_TO_FIXED(50), AX_INT_TO_FIXED(50));
+	ax_engine_spawn_entity("player", AX_INT_TO_FIXED(100), AX_INT_TO_FIXED(100), AX_FLOAT_TO_FIXED(2.5), AX_FLOAT_TO_FIXED(1.25), AX_INT_TO_FIXED(24), AX_INT_TO_FIXED(24));
+	ax_engine_spawn_entity("player", AX_INT_TO_FIXED(100), AX_INT_TO_FIXED(100), AX_FLOAT_TO_FIXED(2.5), AX_FLOAT_TO_FIXED(1.25), AX_INT_TO_FIXED(24), AX_INT_TO_FIXED(24));
     if (load_res != AX_OK) {
         g_engine.api.log_message("[ERROR] Engine failed to load 'player' texture into registry!");
     } else {
@@ -283,12 +294,20 @@ ax_result_t ax_engine_tick(const ax_input_queue_t* input_queue,
     // 6. Translate the computed UI coordinates into Render Commands
     ax_ui_draw(&ui, render_queue);
 
-    const ax_texture_t* player_tex = ax_engine_get_texture("player");
-    if (player_tex != NULL) {
-        ax_vec2_t size = { AX_INT_TO_FIXED(50), AX_INT_TO_FIXED(50) };
-        ax_graphics_push_texture(render_queue, player_tex, g_engine.state->position, size);
-    }
+ // 7. Draw the Entities
+    for (int i = 0; i < AX_MAX_ENTITIES; i++) {
+        ax_entity_t* e = &g_engine.state->entities[i];
+        if (!e->is_active) continue;
 
+        const ax_texture_t* tex = ax_engine_get_texture(e->texture_name);
+        if (tex != NULL) {
+            ax_graphics_push_texture(render_queue, tex, e->position, e->size);
+        } else {
+            // Magenta fallback box if the texture name is wrong/missing
+            ax_graphics_push_rect(render_queue, e->position, e->size, AX_COLOR_MAKE(255, 0, 255, 255));
+        }
+    }
+	
     *out_render_queue = render_queue;
     return AX_OK;
 }

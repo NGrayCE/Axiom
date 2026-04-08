@@ -12,12 +12,24 @@
  * @{
  */
  
- /**
+#define AX_MAX_ENTITIES 128
+
+/**
+ * @brief A single data-driven entity in the game world.
+ */
+typedef struct {
+    bool is_active;
+    ax_vec2_t position;
+    ax_vec2_t velocity;
+    ax_vec2_t size;
+    char texture_name[32]; // Points to the Asset Registry
+} ax_entity_t;
+
+/**
  * @brief The read-only state of the game simulation.
  */
 typedef struct {
-    ax_vec2_t position;
-    ax_vec2_t velocity;
+    ax_entity_t entities[AX_MAX_ENTITIES];
     ax_vec2_t bounds;
     uint32_t frame_count;
 } ax_game_state_t;
@@ -36,7 +48,8 @@ typedef enum {
     AX_INPUT_NONE = 0,
     AX_INPUT_TOUCH_DOWN,
     AX_INPUT_TOUCH_UP,
-    AX_INPUT_TOUCH_MOVE
+    AX_INPUT_TOUCH_MOVE,
+	AX_INPUT_PLAYER_MOVE
 } ax_input_type_t;
 
 /**

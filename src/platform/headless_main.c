@@ -218,27 +218,38 @@ static void run_determinism_test(void) {
     
     AX_TEST("Graphics: Last command is DRAW_TEXTURE", phys_cmd->type == AX_RENDER_CMD_DRAW_TEXTURE);
     
-    const ax_game_state_t* final_state = NULL;
+   const ax_game_state_t* final_state = NULL;
     ax_engine_get_state(&final_state);
     
-    ax_vec2_t render_pos = phys_cmd->as.draw_texture.position;
+	ax_vec2_t render_pos = phys_cmd->as.draw_texture.position;
+    
+    // Dynamically find the position of the mathematically LAST active entity
+    ax_vec2_t last_active_pos = {0, 0};
+    for (int i = 0; i < AX_MAX_ENTITIES; i++) {
+        if (final_state->entities[i].is_active) {
+            last_active_pos = final_state->entities[i].position;
+        }
+    }
+
     AX_TEST("Graphics: Render coords match physics state", 
-            render_pos.x == final_state->position.x && render_pos.y == final_state->position.y);
-			
+            render_pos.x == last_active_pos.x && 
+            render_pos.y == last_active_pos.y);
+
     // -------------------------------------------------------------------------
     // The "Golden Master" Assertion
     // -------------------------------------------------------------------------
-    float final_x = AX_FIXED_TO_FLOAT(final_state->position.x);
-    float final_y = AX_FIXED_TO_FLOAT(final_state->position.y);
+    // UPGRADED: Pull the floats from the first entity in the array
+    float final_x = AX_FIXED_TO_FLOAT(final_state->entities[0].position.x);
+    float final_y = AX_FIXED_TO_FLOAT(final_state->entities[0].position.y);
     
     printf("   [Result] Final Position: X = %.3f, Y = %.3f\n", final_x, final_y);
 
-    // Update expected values to match the new bounds provided by the dynamic UI
-    ax_fixed_t expected_x = AX_INT_TO_FIXED(450); 
-    ax_fixed_t expected_y = AX_INT_TO_FIXED(800); 
+    ax_fixed_t expected_x = AX_INT_TO_FIXED(198); 
+    ax_fixed_t expected_y = AX_INT_TO_FIXED(301); 
 
-    AX_TEST("Determinism: X coordinate matches Golden Master", final_state->position.x == expected_x);
-    AX_TEST("Determinism: Y coordinate matches Golden Master", final_state->position.y == expected_y);
+    // UPGRADED: Assert against the first entity's position
+    AX_TEST("Determinism: X coordinate matches Golden Master", final_state->entities[0].position.x == expected_x);
+    AX_TEST("Determinism: Y coordinate matches Golden Master", final_state->entities[0].position.y == expected_y);
 }
 
 

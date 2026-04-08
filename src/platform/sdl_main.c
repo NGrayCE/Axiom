@@ -22,10 +22,24 @@ static void sdl_log_message(const char* message) {
 static ax_result_t sdl_read_asset(const char* filename, ax_arena_t* arena, void** out_buffer, size_t* out_size) {
     if (!filename || !arena || !out_buffer || !out_size) return AX_ERR_INVALID_INPUT;
 
+    void* temp_data = NULL;
     size_t file_size = 0;
-    // SDL seamlessly handles Windows directories AND Android APKs
-    void* temp_data = SDL_LoadFile(filename, &file_size);
 
+    // Attempt 1: Use the absolute Base Path (Solves Windows/Mac build folder CWD issues)
+    char* base_path = SDL_GetBasePath();
+    if (base_path) {
+        char full_path[1024];
+        snprintf(full_path, sizeof(full_path), "%s%s", base_path, filename);
+        temp_data = SDL_LoadFile(full_path, &file_size);
+        SDL_free(base_path);
+    }
+
+    // Attempt 2: Fallback to the raw relative filename (Solves Android APK Asset loading)
+    if (!temp_data) {
+        temp_data = SDL_LoadFile(filename, &file_size);
+    }
+
+    // If both failed, we legitimately cannot find the file
     if (!temp_data) {
         SDL_Log("SDL Failed to read asset '%s': %s", filename, SDL_GetError());
         return AX_ERR_ASSET_LOAD_FAILED;
@@ -41,9 +55,7 @@ static ax_result_t sdl_read_asset(const char* filename, ax_arena_t* arena, void*
         *out_size = file_size;
     }
 
-    // Free the invisible malloc that SDL used under the hood
     SDL_free(temp_data); 
-
     return res;
 }
 
@@ -134,9 +146,10 @@ int main(int argc, char* argv[]) {
 	// Create the memory arenas
     size_t main_size = 1024 * 1024 * 16;
     size_t frame_size = 1024 * 1024 * 16;
-    
-    void* main_ram = malloc(main_size);     
-    void* frame_ram = malloc(frame_size);   
+	
+    //calloc here to guarantee zero-initialized state
+    void* main_ram = calloc(1, main_size);     
+    void* frame_ram = calloc(1, frame_size);   
 
     ax_system_api_t api = {
         .get_ticks_us = sdl_get_ticks_us,
@@ -190,7 +203,32 @@ int main(int argc, char* argv[]) {
                 }
             }
         }
+		//PLAYER MOVEMENT
+		// 1. Poll the raw hardware state of the keyboard
+		const uint8_t* keys = SDL_GetKeyboardState(NULL);
+		int move_x = 0;
+		int move_y = 0;
 
+		// 2. Map WASD or Arrow Keys to a mathematical vector
+		if (keys[SDL_SCANCODE_RIGHT] || keys[SDL_SCANCODE_D]) move_x += 1;
+		if (keys[SDL_SCANCODE_LEFT]  || keys[SDL_SCANCODE_A]) move_x -= 1;
+		if (keys[SDL_SCANCODE_DOWN]  || keys[SDL_SCANCODE_S]) move_y += 1;
+		if (keys[SDL_SCANCODE_UP]    || keys[SDL_SCANCODE_W]) move_y -= 1;
+
+		// 3. If the player is pushing a direction, push it to the Engine's Input Queue
+		if (move_x != 0 || move_y != 0) {
+			// Assuming your event struct is named ax_input_event_t
+			ax_input_event_t move_event = {0}; 
+			move_event.type = AX_INPUT_PLAYER_MOVE;
+			
+			// Convert our integers into engine-safe 16.16 fixed-point numbers
+			move_event.position.x = AX_INT_TO_FIXED(move_x);
+			move_event.position.y = AX_INT_TO_FIXED(move_y);
+			
+			// Push onto the queue (ensure you don't exceed your queue's max capacity!)
+			input_queue.events[input_queue.count++] = move_event;
+		}
+		
         // Tick the Engine
         ax_render_queue_t* render_queue = NULL;
         if (ax_engine_tick(&input_queue, AX_INT_TO_FIXED(screen_w), AX_INT_TO_FIXED(screen_h), &render_queue) != AX_OK) {
